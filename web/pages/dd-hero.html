@@ -1,0 +1,133 @@
+<h1>Hero Component Breakdown</h1>
+<div class="dd-section -full">
+  <div class="dd-section__content -full">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1">
+                <h2>Overview</h2>
+                <p>The dd-hero component provides a prominent introductory section, typically at the top of a page, featuring a large background image with overlaid content like titles, body text, and calls-to-action. It's designed for engaging headers with responsive backgrounds and flexible content alignment.</p>
+                <p>This component is ideal for homepages, landing pages, or section intros. In WordPress, configure it via ACF fields for hero image (with srcset), title, body, links, and aria-label. In Drupal, use a Paragraph type with media field for image, text fields for content, and optional link fields, rendering responsive attributes dynamically.</p>
+
+                <h2>Basic Usage</h2>
+                <p>Use a section with class <code>dd-hero</code> and aria-label for accessibility. Include an image with srcset for responsiveness, and content with title, body, and optional links.</p>
+
+<!-- used the escapeHtml function to escape HTML characters: AI! -->
+<pre>
+<code id="escape_html">
+<section class="dd-hero" aria-label="Introduction">
+  <div class="dd-hero__image">
+    <picture>
+      <source srcset="
+      https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w,
+      https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w,
+      https://fastly.picsum.photos/id/221/1920/1080.jpg?grayscale&hmac=GWPBzHGEhEh-BrPn1i-PuximCxLtUpKHcNwyACiTRHk 1440w"
+      sizes="(max-width: 1440px) 100vw, 1440px">
+      <img src="https://fastly.picsum.photos/id/221/1920/1080.jpg?grayscale&hmac=GWPBzHGEhEh-BrPn1i-PuximCxLtUpKHcNwyACiTRHk" class="dd-img" alt="Hero image description" />
+    </picture>
+  </div>
+  <div class="dd-hero__content dd-g" data-aos="fade-in">
+    <div class="dd-hero__copy dd-u-1-1 dd-u-lg-12-24">
+      <div class="dd-hero__title">
+        <h1>Hero Title</h1>
+      </div>
+      <div class="dd-hero__body">
+        <p>Hero Body Copy</p>
+        <div class="dd-hero__links dd-g">
+          <div class="dd-hero__link">
+            <a href="#" class="dd-button -primary">Hero Link 1</a>
+          </div>
+          <div class="dd-hero__link">
+            <a href="#" class="dd-button -secondary">Hero Link 2</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</code>
+</pre>
+
+                <p>Nest within a full-width section for layout; use CSS for background positioning on larger screens.</p>
+
+                <h2>CSS Modifiers (from _dd_hero.scss)</h2>
+                <p>The SCSS file defines base styles for the hero, including absolute positioning for images on desktop, flexible content alignment, and responsive heights. Key modifiers include:</p>
+                <ul>
+                  <li><code>-left</code>: Aligns content to the left.</li>
+                  <li><code>-center</code>: Centers content (default for mobile).</li>
+                  <li><code>-right</code>: Aligns content to the right.</li>
+                  <li><code>-overlay-light</code>: Adds a semi-transparent overlay for better text readability on images.</li>
+                  <li><code>-overlay-dark</code>: Adds a darker semi-transparent overlay for better text readability on images.</li>
+
+                  <li>
+                      Utility classes for alignment. <code> -x-center -y-center </code>
+                  </li>
+                  <li>
+                      AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                  </li>
+
+                </ul>
+
+                <p>For ACF/Paragraphs integration, map image fields to generate srcset and classes dynamically.</p>
+
+                <h2>Accessibility and Best Practices</h2>
+                <p>Use aria-label for the section. Provide descriptive alt text for images. Ensure text contrasts with backgrounds. Test keyboard focus on links. In CMS, enforce alt text and aria requirements, and validate for mobile stacking order.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<section class="dd-hero" aria-label="Introduction">
+  <div class="dd-hero__image">
+    <picture>
+      <source srcset="
+      https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w,
+      https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w,
+      https://fastly.picsum.photos/id/221/1920/1080.jpg?grayscale&hmac=GWPBzHGEhEh-BrPn1i-PuximCxLtUpKHcNwyACiTRHk 1440w"
+      sizes="(max-width: 1440px) 100vw, 1440px">
+      <img src="https://fastly.picsum.photos/id/221/1920/1080.jpg?grayscale&hmac=GWPBzHGEhEh-BrPn1i-PuximCxLtUpKHcNwyACiTRHk" class="dd-img" alt="Hero image description" />
+    </picture>
+  </div>
+  <div class="dd-hero__content dd-g" data-aos="fade-in">
+    <div class="dd-hero__copy dd-u-1-1 dd-u-lg-12-24">
+      <div class="dd-hero__title">
+        <h1>Hero Title</h1>
+      </div>
+      <div class="dd-hero__body">
+        <p>Hero Body Copy</p>
+        <div class="dd-hero__links dd-g">
+          <div class="dd-hero__link">
+            <a href="#" class="dd-button -primary">Hero Link 1</a>
+          </div>
+          <div class="dd-hero__link">
+            <a href="#" class="dd-button -secondary">Hero Link 2</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .dd-hero__image {
+    background-image: url('https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y');
+  }
+  @media only screen and (min-width: 64em) {
+    .dd-hero__image {
+      background-image: url('https://fastly.picsum.photos/id/221/1920/1080.jpg?grayscale&hmac=GWPBzHGEhEh-BrPn1i-PuximCxLtUpKHcNwyACiTRHk');
+    }
+  }
+</style>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="">
+    <meta name="author" content="ldnddev">
+    <title>ldnddev-Framework</title>
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  </head>
+
+  <body class="dd-g" id="page_top">
+    <header class="dd-header dd-u-1-1">
+      <div class="dd-header__top">
+        <div class="dd-g">
+          <div class="dd-header__logo dd-u-1-1">
+            <a href="#" hx-get="/pages/home.html" hx-target="main" hx-swap="innterHTML">
+              <picture>
+                <source srcset="/assets/imgs/logo-full-white-text.svg" media="(prefers-color-scheme: dark)">
+                <img src="/assets/imgs/logo-full-black-text.svg" alt="logo" class="dd-img">
+              </picture>
+            </a>
+          </div>
+      </div>
+    </header>
+
+    <aside class="dd-section__item dd-u-1-1 dd-u-lg-6-24 l-box">
+      <div class="dd-header__navigation navigation dd-u-1-1">
+        <nav itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="header navigation">
+          <ul class="menu">
+            <li class="menu-item">
+              <button class="menu__link" hx-get="/pages/home.html" hx-target="main" hx-swap="innerHTML">Home</button>
+            </li>
+
+            <!-- Components -->
+            <li class="menu-item">
+              <div class="dd-accordion">
+                <div class="dd-accordion__items">
+                  <details name="aside_menu" class="dd-accordion__item">
+                    <summary class="dd-accordion__header dd-g -y-center">
+                      <div class="dd-accordion__title dd-u-1-1">Components</div>
+                    </summary>
+                    <div class="dd-accordion__copy">
+                      <ul class="sub-menu">
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-accordion.html" hx-target="main" hx-swap="innerHTML">Accordion</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-alert.html" hx-target="main" hx-swap="innerHTML">Alert</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-alternating.html" hx-target="main" hx-swap="innerHTML">Alternating</a>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-banner.html" hx-target="main" hx-swap="innerHTML">Banner</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-blockquote.html" hx-target="main" hx-swap="innerHTML">Blockquote</span>
+                        </li>
+
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-card.html" hx-target="main" hx-swap="innerHTML">Card</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-cta.html" hx-target="main" hx-swap="innerHTML">cta</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-hero.html" hx-target="main" hx-swap="innerHTML">hero</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-milestones.html" hx-target="main" hx-swap="innerHTML">milestones</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-modal.html" hx-target="main" hx-swap="innerHTML">modal</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-section.html" hx-target="main" hx-swap="innerHTML">Section</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-spacer.html" hx-target="main" hx-swap="innerHTML">Spacer</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-tabs.html" hx-target="main" hx-swap="innerHTML">Tabs</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </li>
+
+            <!-- Layouts -->
+            <li class="menu-item">
+              <div class="dd-accordion">
+                <div class="dd-accordion__items">
+                  <details name="aside_menu" class="dd-accordion__item">
+                    <summary class="dd-accordion__header dd-g -y-center">
+                      <div class="dd-accordion__title dd-u-1-1">layouts</div>
+                    </summary>
+                    <div class="dd-accordion__copy">
+                      <ul class="sub-menu">
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-footer-large.html" hx-target="main" hx-swap="innerHTML">Footer Large</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-footer-medium.html" hx-target="main" hx-swap="innerHTML">Footer Medium</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-footer-small.html" hx-target="main" hx-swap="innerHTML">Footer Small</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-footer-001.html" hx-target="main" hx-swap="innerHTML">Footer 001</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-header.html" hx-target="main" hx-swap="innerHTML">Header</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-grid.html" hx-target="main" hx-swap="innerHTML">Grid</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </li>
+
+            <!-- Elements -->
+            <li class="menu-item">
+              <div class="dd-accordion">
+                <div class="dd-accordion__items">
+                  <details name="aside_menu" class="dd-accordion__item">
+                    <summary class="dd-accordion__header dd-g -y-center">
+                      <div class="dd-accordion__title dd-u-1-1">Elements</div>
+                    </summary>
+                    <div class="dd-accordion__copy">
+                      <ul class="sub-menu">
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-buttons.html" hx-target="main" hx-swap="innerHTML">Buttons</span>
+                        </li>
+                        <li class="menu-item">
+                          <span class="menu__link" hx-get="/pages/dd-forms.html" hx-target="main" hx-swap="innerHTML">Forms</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+      <style>
+      .menu__link {
+        font-size: 12px;
+      }
+      </style>
+    </aside>
+    <main class="dd-u-1-1 dd-u-lg-18-24" hx-trigger="load" hx-get="/pages/home.html">
+
+    </main>
+
+<div class="dd-scrolltop">
+  <div class="dd-scrolltop__link">
+    <a href="#page_top" title="Click to scroll to the top of the page."><i class="fa-solid fa-chevrons-up"></i></a>
+  </div>
+</div>
+
+    <footer class="dd-footer dd-u-1-1">
+      <div class="dd-g">
+        <div class="dd-footer__copyright dd-u-1-1">
+          <div class="l-box">
+            © 2025 ldnddev, LLC
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/vendors/axe/axe.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/vendors/axe/dd-axe.js" defer></script>
+
+  </body>
+</html>

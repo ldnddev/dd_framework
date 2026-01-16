@@ -1,0 +1,32 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.dd-section {
+  $p: &;
+  background-color: variables.$c_ui_neutral_100;
+  top: 0px;
+  left: 0px;
+  margin: 0 auto;
+  padding: 40px 0;
+  max-width: variables.$width_xl;
+  &.-full {
+    max-width: 100%;
+  }
+  &__content {
+    @include mixins.position_relative();
+    & {
+      margin: 0 auto;
+      max-width: variables.$width_xl;
+    }
+    &.-full {
+      max-width: 100%;
+    }
+  }
+  &__title {
+    @include mixins.font_headline(bold);
+    @include mixins.font_size(22px);
+  }
+  &.-no-padding {
+    padding: 0;
+  }
+}

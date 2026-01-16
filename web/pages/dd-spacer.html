@@ -1,0 +1,52 @@
+<h1>Spacer component Breakdown</h1>
+<div class="dd-section -full">
+  <div class="dd-section__content -contained">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1 l-box">
+        <h2>Overview</h2>
+        <p>The dd-spacer component provides a simple way to add vertical spacing or dividers between elements, helping control layout flow without custom CSS. It supports predefined sizes and an optional divider line, making it a utility for consistent padding in sections, grids, or between components.</p>
+        <p>This component is ideal for adding breathing room in content-heavy areas or separating blocks visually. In WordPress, configure it via an ACF select field for size and divider options within flexible content. In Drupal, use a Paragraph type with a select field for size and a boolean for divider, rendering as a standalone element.</p>
+
+        <h2>Basic Usage</h2>
+        <p>Use a div with class <code>dd-spacer</code> and a size modifier like <code>-xl</code>. Add <code>-divider</code> for a horizontal line.</p>
+        <pre><code>&lt;div class="dd-spacer -xl -divider"&gt;&lt;/div&gt;</code></pre>
+        <p>Place it between elements or sections for spacing; it's full-width by default and can be nested in grids or sections.</p>
+<pre>
+<code id="escape_html">
+<div class="dd-spacer -sm"></div>
+<div class="dd-spacer -md"></div>
+<div class="dd-spacer -lg"></div>
+<div class="dd-spacer -xl"></div>
+<div class="dd-spacer -xxl"></div>
+<div class="dd-spacer -xxxl"></div>
+</code>
+</pre>
+        <h2>CSS Modifiers (from _dd_spacer.scss)</h2>
+        <p>The SCSS file defines base styles for the spacer as a block element with relative positioning and 100% width. Key modifiers include:</p>
+        <ul>
+          <li><code>-sm</code>: Adds 0.5rem top/bottom margin.</li>
+          <li><code>-md</code>: Adds 1rem top/bottom margin.</li>
+          <li><code>-lg</code>: Adds 1.5rem top/bottom margin.</li>
+          <li><code>-xl</code>: Adds 2rem top/bottom margin.</li>
+          <li><code>-xxl</code>: Adds 2.5rem top/bottom margin.</li>
+          <li><code>-xxxl</code>: Adds 3rem top/bottom margin.</li>
+          <li><code>-divider</code>: Adds a 1px solid border (colored via primary variable).</li>
+        </ul>
+
+        <p>For ACF/Paragraphs integration, use select fields to apply size and divider classes dynamically.</p>
+
+        <h2>Accessibility and Best Practices</h2>
+        <p>Avoid overusing spacers; prefer semantic spacing via CSS margins/padding. For dividers, ensure they don't create empty landmarks. Use aria-hidden if decorative. Test for consistent flow in screen readers. In CMS, limit options to predefined sizes for design consistency and prevent abuse.</p>
+
+<div class="dd-spacer -sm"></div>
+<div class="dd-spacer -md"></div>
+<div class="dd-spacer -lg"></div>
+<div class="dd-spacer -xl"></div>
+<div class="dd-spacer -xxl"></div>
+<div class="dd-spacer -xxxl"></div>
+<div class="dd-spacer -xxl -divider"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

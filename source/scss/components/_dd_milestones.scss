@@ -1,0 +1,37 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.dd-milestones {
+  $parent: &;
+  &__items {
+    @include mixins.position_relative();
+  }
+  &__item {
+    overflow: hidden;
+    &.-animate {
+      @include mixins.opacity(0);
+    }
+    &.-is-visible {
+      @include mixins.slide_up_bottom;
+    }
+  }
+  &__body {
+    @include mixins.box_shadow();
+  }
+  &__percentage {
+    @include mixins.font_size(32px);
+  }
+  &__subtitle {
+    //todo
+  }
+  &__title {
+    @include mixins.font_headline();
+    @include mixins.font_size(18px);
+  }
+  &__copy {
+    //todo
+  }
+  &__link {
+    //todo
+  }
+}

@@ -7,6 +7,9 @@
 node_modules/
 dist/
 
+# Kilocode folder
+.kilocode/
+
 # Compiled Java class files
 *.class
 
@@ -47,4 +50,6 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
+.kilocode
+.kilocode
+.aider*

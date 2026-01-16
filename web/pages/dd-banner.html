@@ -1,0 +1,104 @@
+<h1>Banner Component Breakdown</h1>
+<div class="dd-section -full">
+  <div class="dd-section__content -full">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1">
+                  <h2>Overview</h2>
+                  <p>The dd-banner component provides a full-width banner image with customizable background positioning. It's designed for hero sections, promotional banners, or visual breaks, supporting responsive images and inline styles for background.</p>
+                  <p>This component is ideal for landing pages or section dividers. In WordPress, configure it via ACF fields for image upload, alt text, and position modifier. In Drupal, use a Paragraph type with image field and select list for background position, rendering the style attribute dynamically.</p>
+
+                  <h2>Basic Usage</h2>
+                  <p>Use a div with class <code>dd-banner</code> and data-aos for animations. Set background-image via inline style, with an img element for foreground or fallback, using srcset for responsiveness.</p>
+
+<pre>
+<code id="escape_html">
+<div class="dd-banner" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+  <div class="dd-banner__image">
+  <img
+    sizes="(max-width: 720px) 100vw 720px"
+    srcset="
+      https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
+      https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
+    src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+  </div>
+</div>
+</code>
+</pre>
+                  <p>Add media queries in &lt;style&gt; for larger backgrounds. For overlays or text, nest content inside, as seen in header examples.</p>
+
+                  <h2>CSS Modifiers (from _dd_banner.scss)</h2>
+                  <p>The SCSS file defines base styles for the banner, including full-width, background sizing (cover/contain), and positioning utilities. Key modifiers include:</p>
+                  <ul>
+                    <li><code>-bg-top-left</code>: Positions background at top-left.</li>
+                    <li><code>-bg-top-center</code>: Positions at top-center.</li>
+                    <li><code>-bg-top-right</code>: Positions at top-right.</li>
+                    <li><code>-bg-center-left</code>: Positions at center-left.</li>
+                    <li><code>-bg-center-center</code>: Positions at center-center (default if none specified).</li>
+                    <li><code>-bg-center-right</code>: Positions at center-right.</li>
+                    <li><code>-bg-bottom-left</code>: Positions at bottom-left.</li>
+                    <li><code>-bg-bottom-center</code>: Positions at bottom-center.</li>
+                    <li><code>-bg-bottom-right</code>: Positions at bottom-right.</li>
+                    <li>
+                        AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                    </li>
+                  </ul>
+
+                  <h2>Accessibility and Best Practices</h2>
+                  <p>Provide descriptive alt text for images. If text overlays, ensure contrast ratios meet WCAG. Use aria-label for decorative banners. Test for keyboard focus if interactive. In CMS, enforce alt text requirements and validate image formats for responsiveness.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dd-section -full">
+  <div class="dd-section__content -full">
+    <div class="dd-section__items dd-g">
+
+      <div class="dd-section__item dd-u-1-1">
+        <div class="dd-banner" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+          <div class="dd-banner__image">
+          <img
+            sizes="(max-width: 720px) 100vw 720px"
+            srcset="
+              https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
+              https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
+            src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+          </div>
+        </div>
+      </div>
+
+      <div class="dd-spacer -xl"></div>
+
+      <div class="dd-section__item dd-u-1-1">
+        <div class="dd-banner -bg-top-left" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+          <div class="dd-banner__image">
+          <img
+            sizes="(max-width: 720px) 100vw 720px"
+            srcset="
+              https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
+              https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
+            src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+          </div>
+        </div>
+      </div>
+
+      <div class="dd-spacer -xl"></div>
+
+      <div class="dd-section__item dd-u-1-1">
+        <div class="dd-banner -bg-bottom-right" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+          <div class="dd-banner__image">
+          <img
+            sizes="(max-width: 720px) 100vw 720px"
+            srcset="
+              https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
+              https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
+            src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+          </div>
+        </div>
+      </div>
+
+      <div class="dd-spacer -xl"></div>
+
+    </div>
+  </div>
+</div>

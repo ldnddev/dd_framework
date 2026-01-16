@@ -1,0 +1,90 @@
+<h1>Milestones Component Breakdown</h1>
+<div class="dd-section -full">
+  <div class="dd-section__content -contained">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1 l-box">
+        <h2>Overview</h2>
+        <p>The dd-milestones component provides a grid of milestone or statistic blocks, featuring animated percentage counters, titles, subtitles, copy, and optional links. It's designed for showcasing achievements, stats, or key metrics with visual animations for engagement.</p>
+        <p>This component is ideal for about pages, dashboards, or impact reports. In WordPress, configure it via ACF repeater fields for milestone items (e.g., number, title, subtitle, copy, link). In Drupal, use a Paragraph type with fields for each milestone element, rendered in a grid loop.</p>
+
+        <h2>Basic Usage</h2>
+        <p>Wrap milestones in a div with class <code>dd-milestones</code>. Use a grid for items, each with a body containing the percentage (with data-number), title, subtitle, copy, and link. Add AOS for fade animations.</p>
+<pre>
+<code id="escape_html">
+<div class="dd-milestones">
+  <div class="dd-milestones__content">
+    <div class="dd-milestones__items dd-g"><!-- milestones loop inside items -->
+      <div class="dd-milestones__item dd-u-12-24 dd-u-lg-8-24 l-box" data-aos="fade-up">
+        <div class="dd-milestones__body l-box">
+          <div class="dd-milestones__percentage" data-number="70"><span class="number">0</span>%</div>
+          <div class="dd-milestones__title">Title</div>
+          <div class="dd-milestones__subtitle">Subtitle</div>
+          <div class="dd-milestones__copy">Lorem ipsum dolor sit amet</div>
+          <div class="dd-milestones__link"><a href="#" class="dd-button">Link</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</code>
+</pre>
+
+        <p>The data-number drives the animation; grid classes control responsive columns (e.g., 3-column on large screens).</p>
+
+        <h2>CSS Modifiers (from _dd_milestones.scss)</h2>
+        <p>The SCSS file defines base styles for milestones, including grid layout, shadows on bodies, and animation classes for visibility. Key modifiers include:</p>
+        <ul>
+          <li><code>-horizontal</code>: Adjusts for horizontal item flow if needed.</li>
+          <li>Utility classes like AOS data attributes (e.g., <code>data-aos="fade-up"</code>) for custom entrances, or grid utilities for column adjustments.</li>
+        </ul>
+
+        <h2>Associated JavaScript (from dd_milestones.js)</h2>
+        <p>The component includes a JS file for animating the percentage counters, triggered on window load (or via dd_animate.js) to increment numbers from 0 to data-number value.</p>
+
+        <p>For ACF/Paragraphs integration, map number fields to data-number attributes dynamically.</p>
+
+        <h2>Accessibility and Best Practices</h2>
+        <p>Use aria-live for dynamic counter updates if needed. Ensure colors contrast for percentages. Add units or labels for clarity. Test screen reader announcements of final values. In CMS, validate number fields as integers and provide fallbacks for no-JS (show final value statically).</p>
+
+<div class="dd-milestones">
+  <div class="dd-milestones__content">
+    <div class="dd-milestones__items dd-g"><!-- milestones loop inside items -->
+
+      <div class="dd-milestones__item dd-u-12-24 dd-u-lg-8-24 l-box" data-aos="fade-up">
+        <div class="dd-milestones__body l-box">
+          <div class="dd-milestones__percentage" data-number="70"><span class="number">70</span>%</div>
+          <div class="dd-milestones__title">Title</div>
+          <div class="dd-milestones__subtitle">Subtitle</div>
+          <div class="dd-milestones__copy">Lorem ipsum dolor sit amet</div>
+          <div class="dd-milestones__link"><a href="#" class="dd-button">Link</a></div>
+        </div>
+      </div>
+
+      <div class="dd-milestones__item dd-u-12-24 dd-u-lg-8-24 l-box" data-aos="fade-up">
+        <div class="dd-milestones__body l-box">
+          <div class="dd-milestones__percentage" data-number="80"><span class="number">70</span>%</div>
+          <div class="dd-milestones__title">Title</div>
+          <div class="dd-milestones__subtitle">Subtitle</div>
+          <div class="dd-milestones__copy">Lorem ipsum dolor sit amet</div>
+          <div class="dd-milestones__link"><a href="#" class="dd-button">Link</a></div>
+        </div>
+      </div>
+
+      <div class="dd-milestones__item dd-u-12-24 dd-u-lg-8-24 l-box" data-aos="fade-up">
+        <div class="dd-milestones__body l-box">
+          <div class="dd-milestones__percentage" data-number="90"><span class="number">70</span>%</div>
+          <div class="dd-milestones__title">Title</div>
+          <div class="dd-milestones__subtitle">Subtitle</div>
+          <div class="dd-milestones__copy">Lorem ipsum dolor sit amet</div>
+          <div class="dd-milestones__link"><a href="#" class="dd-button">Link</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+<h1>Alert Component Breakdown</h1>
+<div class="dd-section">
+  <div class="dd-section__content">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1">
+                  <h2>Overview</h2>
+                  <p>The dd-alert component provides a flexible way to display notification messages, such as warnings, errors, successes, or informational alerts. It supports different severity levels with color-coded visuals for quick user recognition.</p>
+                  <p>This component is ideal for form validation feedback, system messages, or user notifications. In WordPress, configure it via ACF fields for alert type, heading, and text. In Drupal, use a Paragraph type with select fields for type and text areas for content, allowing dynamic rendering based on conditions.</p>
+
+                  <h2>Basic Usage</h2>
+                  <p>Wrap the alert content in a container with class <code>dd-alert</code> and role="alert" for accessibility. Include a heading and text, with optional links. Use AOS for fade-in animations.</p>
+
+<pre>
+<code id="escape_html">
+<div class="dd-alert" role="alert" data-aos="fade-in">
+  <div class="dd-alert__content dd-g">
+    <div class="dd-u-1-1">
+      <div class="l-box">
+        <div class="dd-alert__heading">
+          Default Alert
+        </div>
+        <div class="dd-alert__text">
+          Lorem ipsum dolor sit amet, <a href="#">link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</code>
+</pre>
+                  <p>Add spacers (e.g., <code>&lt;div class="dd-spacer -xxl -divider"&gt;&lt;/div&gt;</code>) between multiple alerts for separation.</p>
+
+                  <h2>CSS Modifiers (from _dd_alert.scss)</h2>
+                  <p>The SCSS file defines base styles for alerts, including colors, borders, and icons based on type. Key modifiers include:</p>
+                  <ul>
+                    <li><code>-info</code>: Blue-themed for informational messages.</li>
+                    <li><code>-success</code>: Green-themed for positive confirmations.</li>
+                    <li><code>-warning</code>: Yellow/orange-themed for cautions.</li>
+                    <li><code>-error</code>: Red-themed for errors or critical alerts.</li>
+                    <li><code>-compact</code>: Reduces padding for inline or space-constrained uses.</li>
+                    <li>
+                        Utility classes for alignment. <code> -x-center -y-center </code>
+                    </li>
+                    <li>
+                        AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                    </li>
+                  </ul>
+
+                  <h2>Accessibility and Best Practices</h2>
+                  <p>Use role="alert" for immediate announcements. Ensure color contrast meets WCAG standards. Include icons for visual cues but hide them from screen readers if decorative. Test with screen readers for live updates. In CMS, make text fields support HTML for links, and validate for empty content.</p>
+
+
+
+<div class="dd-alert" role="alert" data-aos="fade-in">
+  <div class="dd-alert__content dd-g">
+    <div class="dd-u-1-1">
+      <div class="l-box">
+        <div class="dd-alert__heading">
+          Default Alert
+        </div>
+        <div class="dd-alert__text">
+          Lorem ipsum dolor sit amet, <a href="#">link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-alert -info" role="alert" data-aos="fade-in">
+  <div class="dd-alert__content dd-g">
+    <div class="dd-u-1-1">
+      <div class="l-box">
+        <div class="dd-alert__heading">
+          Info Alert
+        </div>
+        <div class="dd-alert__text">
+          Lorem ipsum dolor sit amet, <a href="#">link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-alert -success" role="alert" data-aos="fade-in">
+  <div class="dd-alert__content dd-g">
+    <div class="dd-u-1-1">
+      <div class="l-box">
+        <div class="dd-alert__heading">
+          Success Alert
+        </div>
+        <div class="dd-alert__text">
+          Lorem ipsum dolor sit amet, <a href="#">link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-alert -warning" role="alert" data-aos="fade-in">
+  <div class="dd-alert__content dd-g">
+    <div class="dd-u-1-1">
+      <div class="l-box">
+        <div class="dd-alert__heading">
+          Warning Alert
+        </div>
+        <div class="dd-alert__text">
+          Lorem ipsum dolor sit amet, <a href="#">link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-alert -error" role="alert" data-aos="fade-in">
+  <div class="dd-alert__content dd-g">
+    <div class="dd-u-1-1">
+      <div class="l-box">
+        <div class="dd-alert__heading">
+          Error Alert
+        </div>
+        <div class="dd-alert__text">
+          Lorem ipsum dolor sit amet, <a href="#">link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>

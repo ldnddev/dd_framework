@@ -1,0 +1,75 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+a {
+  color: variables.$c_text_primary;
+  @include mixins.bg_transition(0.4s);
+
+  &[href*="mailto:"]::before {
+    content: "\f2b6";
+    margin-right: 6px;
+    @include mixins.font_icon();
+  }
+
+  &[href*="tel:"]::before {
+    content: "\f095";
+    margin-right: 6px;
+    @include mixins.font_icon();
+  }
+
+  &[href*=".pdf"]::after {
+    content: "\f1c1";
+    margin-right: 6px;
+    @include mixins.font_icon();
+  }
+
+  &[target="_blank"]::after {
+    content: "\f360";
+    margin-right: 6px;
+    @include mixins.font_icon();
+  }
+}
+
+address {
+  // todo
+}
+
+abbr {
+  color: variables.$c_text_secondary;
+  @include mixins.bg_transition(.4s);
+  @include mixins.font_base();
+}
+
+b,
+strong {
+  @include mixins.font_headline(bold);
+}
+
+cite {
+  @include mixins.font_base();
+}
+
+code {
+  border: solid 1px variables.$c_ui_neutral_300;
+  border-left: solid 5px variables.$c_ui_neutral_300;
+  display: block;
+  margin-bottom: 20px;
+  padding: 8px;
+  overflow-x: scroll;
+}
+
+data {
+  @include mixins.font_base();
+  @include mixins.font_size(12px);
+  color: variables.$c_text_disabled;
+  content: ' (ID ' attr(value) ')';
+}
+
+em {
+  font-style: italic;
+}
+
+sub,
+sup {
+  @include mixins.font_size(8px);
+}

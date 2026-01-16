@@ -1,0 +1,87 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.dd-slider {
+  @include mixins.position_relative();
+  &__items {
+    display: block;
+    overflow: hidden;
+  }
+  &__item {
+    width: 100%;
+    &::after {
+      display: table;
+      content: '';
+      clear: both;
+    }
+  }
+  &__content {
+    overflow: hidden;
+  }
+  &__image {
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__title {
+    //todo
+  }
+  &__copy {
+    //todo
+  }
+  &__links {
+    //todo
+  }
+  &__link {
+    //todo
+  }
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    order: 2;
+    margin: 0 !important;
+    & li {
+      align-content: center;
+      justify-items: center;
+      width: 48px;
+      height: 48px;
+    }
+    & a {
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50% !important;
+    }
+  }
+  &__nav {
+    text-indent: 0px !important;
+    &.prev,
+    &.next {
+      &::after {
+        @include mixins.font_icon();
+      }
+    }
+    &.prev {
+      order: 1;
+      &::after {
+        content: '\f053';
+      }
+    }
+    &.next {
+      order: 3;
+      &::after {
+        content: '\f054';
+      }
+    }
+  }
+}

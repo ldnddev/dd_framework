@@ -1,0 +1,79 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+blockquote {
+  // todo
+}
+
+div {
+  box-sizing: border-box;
+}
+
+dl {
+  dt {
+    color: variables.$c_text_primary;
+    @include mixins.font_headline();
+    @include mixins.font_size(16px);
+  }
+
+  dd {
+    color: variables.$c_text_primary;
+    @include mixins.font_base(regular);
+    @include mixins.font_size(14px);
+  }
+}
+
+figure {
+  border: solid 1px variables.$c_ui_neutral_300;
+  padding: 4px;
+  text-align: center;
+  @include mixins.position_relative();
+  @include mixins.border_radius();
+  & figcaption {
+    background-color: variables.$c_ui_neutral_300;
+    color: variables.$c_text_secondary;
+    padding: 8px;
+  }
+}
+
+hr {
+  color: variables.$c_ui_neutral_300;
+}
+
+ol {
+  list-style: none;
+  li {
+    &::before {
+      content: counter(li);
+      color: variables.$c_text_primary;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1.5em;
+      direction: rtl;
+      @include mixins.font_headline();
+    }
+  }
+}
+
+p {
+  // todo
+}
+
+pre {
+  // todo
+}
+
+ul {
+  list-style: none;
+  & li {
+    &::before {
+      content: "\2022";
+      color: variables.$c_text_primary;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      @include mixins.font_headline();
+    }
+  }
+}

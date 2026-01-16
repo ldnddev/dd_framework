@@ -1,0 +1,64 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.dd-accordion {
+    @include mixins.position_relative();
+    background-color: variables.$c_ui_neutral_100;
+    &__items {
+        //todo
+    }
+    &__item {
+        position: relative;
+        border: solid 1px variables.$c_support_overlay;
+        &:hover {
+            color: variables.$c_support_focus;
+        }
+        &::after {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            padding: 1rem;
+            cursor: pointer;
+            content: "+";
+        }
+        &[open],
+        &:open {
+            border-color: variables.$c_support_focus;
+            &::after {
+                color: variables.$c_support_focus;
+                content: "-";
+            }
+        }
+    }
+    &__header {
+        color: variables.$c_text_primary;
+        cursor: pointer;
+        list-style: none;
+        padding: 1rem;
+        &::marker,
+        &::-webkit-details-marker {
+            display: none;
+            content: none;
+        }
+    }
+    &__title {
+        //todo
+    }
+    &__copy {
+        padding: 0 1rem;
+        color: variables.$c_text_primary;
+    }
+    &.-borderless {
+        & .dd-accordion__item {
+            border: none;
+        }
+    }
+    &.-compact {
+        & .dd-accordion__header {
+            padding: 0.5rem;
+        }
+        & .dd-accordion__copy {
+            padding: 0 0.5rem;
+        }
+    }
+}

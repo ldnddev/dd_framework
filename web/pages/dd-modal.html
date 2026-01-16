@@ -1,0 +1,58 @@
+<h1>Modal Component Breakdown</h1>
+<div class="dd-section">
+  <div class="dd-section__content">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1">
+        <h2>Overview</h2>
+        <p>The dd-modal component provides a dialog-based modal window for displaying content overlays. It uses the native HTML5 dialog element for built-in accessibility and focus management, ensuring it works progressively with or without JavaScript enhancements.</p>
+        <p>This component is ideal for alerts, forms, confirmations, or additional content displays. In WordPress, configure it via ACF fields for modal triggers and content. In Drupal, use Paragraphs with fields for button text, modal content, and IDs.</p>
+
+        <h2>Basic Usage</h2>
+        <p>Use buttons with <code>data-modal-open</code> and <code>data-id</code> attributes to open modals. The modal itself uses dialog with <code>data-modal</code> and a matching <code>id</code>. Include a close button with <code>data-modal-close</code> and <code>data-id</code> inside the modal.</p>
+        <pre>
+<code id="escape_html">
+<button data-modal-open data-id="example-modal">Open Modal</button>
+
+<dialog data-modal id="example-modal" class="dd-modal">
+  <button data-modal-close data-id="example-modal" aria-label="close modal window">X</button>
+  <div class="dd-modal__content">
+    <p>Modal content here.</p>
+  </div>
+</dialog>
+</code>
+</pre>
+
+        <h2>CSS Modifiers</h2>
+        <p>Base styles for the modal include backdrop blur, centering, and responsive sizing. Modifiers can be added for custom appearances (e.g., size variants like <code>-large</code> or <code>-small</code> if defined in future SCSS).</p>
+        <ul>
+          <li><code>[open]</code>: Applied when the dialog is open, for styling the backdrop and modal.</li>
+        </ul>
+
+        <h2>Accessibility and Best Practices</h2>
+        <p>
+          The dialog element provides automatic focus management and keyboard navigation (ESC to close). Ensure close buttons have proper
+          <code>aria-label</code>. Test with screen readers. In CMS, ensure modal content is meaningful and avoid nesting interactive elements.
+        </p>
+      </div>
+    </div>
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1 l-box">
+        <button data-modal-open data-id="dd-modal-001">Open Modal 1</button>
+        <dialog id="dd-modal-001" data-modal class="dd-modal">
+          <button data-modal-close data-id="dd-modal-001" aria-label="close modal window">X</button>
+          <div class="dd-modal__content">
+            <p>This content will show in the open modal window 1.</p>
+          </div>
+        </dialog>
+
+        <button data-modal-open data-id="dd-modal-002">Open Modal 2</button>
+        <dialog id="dd-modal-002" data-modal class="dd-modal">
+          <button data-modal-close data-id="dd-modal-002" aria-label="close modal window">X</button>
+          <div class="dd-modal__content">
+            <p>This content will show in the open modal window 2.</p>
+          </div>
+        </dialog>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+#
+# package     Lando Boilerplate
+# author      Jared Lyvers
+# REQUIREMENTS: Lando 3.0.0-RC.2+ - Tested on 3.0.0-RC.17
+# Replace PROJECTNAME
+
+name: ddframework
+recipe: lamp
+
+proxy:
+  appserver:
+    - ddframework.lndo.site
+  #pma:
+  #  - phpmyadmin.lndo.site
+  #mailhog:
+  #  - mailhog.lndo.site
+
+config:
+  php: '8.2'
+  via: apache
+  webroot: web
+
+services:
+  appserver:
+    ports:
+      # port setup for http://localhost:8080
+      - '8888:80'
+  node:
+    type: 'node:20'
+    build_as_root:
+      - "apt-get update -y"
+    build:
+      - npm install
+      - npm install sass --save-dev
+      - npm install grunt --save-dev
+      - npm install grunt-cli --save-dev
+      - npm install grunt-express-server --save-dev
+      - npm install grunt-dart-sass --save-dev
+      - npm install grunt-notify --save-dev
+      - npm install grunt-browser-sync --save-dev
+      - npm install grunt-real-favicon --save-dev
+      - npm install grunt-text-replace --save-dev
+      - npm install grunt-contrib-clean --save-dev
+      - npm install grunt-contrib-concat --save-dev
+      - npm install grunt-contrib-watch --save-dev
+      - npm install grunt-contrib-sass --save-dev
+      - npm install grunt-contrib-uglify --save-dev
+      - npm install grunt-contrib-copy --save-dev
+      - npm install axe-core --save-dev
+
+#  database:
+#    type: mysql
+#    creds:
+#      user: ddframework
+#      password: ddframework
+#      database: ddframework
+
+#  pma:
+#    type: phpmyadmin
+
+#  mailhog:
+#    type: mailhog
+#    hogfrom:
+#      - appserver
+
+tooling:
+  npm:
+   service: node
+  node:
+   service: node
+  grunt:
+   service: node
+  yarn:
+    service: node
+
+events:
+  post-start:
+  # - node: grunt dev

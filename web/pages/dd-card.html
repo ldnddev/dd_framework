@@ -1,0 +1,396 @@
+<h1>Card Component Breakdown</h1>
+<div class="dd-section">
+  <div class="dd-section__content">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1">
+                <h2>Overview</h2>
+                <p>The dd-card component provides a flexible card layout for displaying grouped content, such as features, products, or team members. It supports grids of cards with images, titles, subtitles, body text, and links, making it responsive and customizable.</p>
+                <p>This component is ideal for galleries, portfolios, or feature lists. In WordPress, configure it via ACF repeater fields for card items (e.g., image, title, subtitle, copy, link). In Drupal, use a Paragraph type with fields for each card element, rendered in a loop for multi-card displays.</p>
+
+                <h2>Basic Usage</h2>
+                <p>Wrap cards in a container with class <code>dd-card</code>. Use a grid for items, each with content structure. Add AOS for fade animations and lazy loading for images.</p>
+
+<pre>
+<code id="escape_html">
+<div class="dd-card">
+  <div class="dd-card__items dd-g"><!-- cards loop inside items -->
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-12-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</code>
+</pre>
+
+                <p>Use grid classes like dd-u-md-12-24 for responsive columns (e.g., 2-column on medium screens).</p>
+
+                <h2>CSS Modifiers (from _dd_card.scss)</h2>
+                <p>The SCSS file defines base styles for cards, including borders, shadows, and responsive grids. Key modifiers include:</p>
+                <ul>
+                  <li><code>-horizontal</code>: Lays out card content horizontally (image left, copy right) instead of vertical.</li>
+                  <li><code>-no-image</code>: Hides the image for text-only cards.</li>
+                  <li>
+                      Utility classes for alignment. <code> -x-center -y-center </code>
+                  </li>
+                  <li>
+                      AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                  </li>
+                </ul>
+
+                <p>For ACF/Paragraphs integration, use repeater fields to generate cards dynamically, with optional fields for modifiers.</p>
+
+                <h2>Accessibility and Best Practices</h2>
+                <p>Use alt text for images and semantic headings in titles. Ensure links are descriptive. Add role="list" to items for screen readers if in a grid. Test keyboard navigation and focus styles. In CMS, require alt text and validate content for completeness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<div class="dd-card">
+  <div class="dd-card__items dd-g"><!-- cards loop inside items -->
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-12-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-12-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-card -horizontal">
+  <div class="dd-card__items dd-g"><!-- cards loop inside items -->
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-12-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-12-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-card">
+  <div class="dd-card__items dd-g"><!-- cards loop inside items -->
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-card -horizontal">
+  <div class="dd-card__items dd-g"><!-- cards loop inside items -->
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="dd-spacer -xxl -divider"></div>
+
+<div class="dd-card -no-image">
+  <div class="dd-card__items dd-g"><!-- cards loop inside items -->
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dd-card__item l-box dd-u-1-1 dd-u-md-8-24" data-aos="fade-up">
+      <div class="dd-card__body dd-g">
+        <div class="dd-card__image">
+          <img src="https://dummyimage.com/500x500/000/fff" alt="Image description" class="dd-image" width="768" height="287" loading="lazy">
+        </div>
+        <div class="dd-card__copy l-box">
+          <div class="dd-card__title">
+            <h3>Card Title</h3>
+          </div>
+          <div class="dd-card__sub-title">
+            <strong>Card Sub Title</strong>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="dd-card__links dd-g">
+            <div class="dd-card__link">
+              <a href="#" target="_self" class="dd-button -primary">Card Link <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>

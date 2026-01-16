@@ -1,0 +1,30 @@
+@use "../partials/mixins";
+@use "../partials/variables";
+
+.dd-timeline {
+  @include mixins.position_relative();
+  &__content {
+    //todo
+  }
+  &__items {
+    //todo
+  }
+  &__item {
+    overflow: hidden
+  }
+  &__body {
+    //todo
+  }
+  &__image {
+    //todo
+  }
+  &__copy {
+    //todo
+  }
+  &__year {
+    //todo
+  }
+  &__title {
+    //todo
+  }
+}
