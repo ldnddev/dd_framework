@@ -12,6 +12,9 @@ caption {
 table {
   border-collapse: collapse;
   border: 1px solid variables.$c_ui_neutral_300;
+  @include mixins.pref_dark {
+    border: 1px solid variables.$c_ui_neutral_300--dark;
+  }
 }
 
 tbody {
@@ -21,6 +24,9 @@ tbody {
 td,
 th {
   border: 1px solid variables.$c_ui_neutral_300;
+  @include mixins.pref_dark {
+    border: 1px solid variables.$c_ui_neutral_300--dark;
+  }
 }
 
 tfoot,
@@ -28,6 +34,9 @@ thead {
   @include mixins.font_headline(bold);
   @include mixins.font_size(16px);
   border-bottom: solid 1px variables.$c_ui_neutral_300;
+  @include mixins.pref_dark {
+    border-bottom: solid 1px variables.$c_ui_neutral_300--dark;
+  }
 }
 
 tr {
@@ -35,9 +44,15 @@ tr {
 
   &:nth-child(even) {
     background-color: variables.$c_ui_neutral_200;
+    @include mixins.pref_dark {
+      background-color: variables.$c_ui_neutral_200--dark;
+    }
   }
 
   &:nth-child(odd) {
     background-color: variables.$c_ui_neutral_100;
+    @include mixins.pref_dark {
+      background-color: variables.$c_ui_neutral_100--dark;
+    }
   }
 }

@@ -5,43 +5,81 @@ button,
 .dd-button {
   @include mixins.bg_transition();
   @include mixins.border_radius(0,0,0,0);
-  background-color: variables.$c_action_default_surface;
-  border: solid 1px variables.$c_action_default_border;
+  background-color: variables.$c_primary_action_default_surface;
+  border: solid 1px variables.$c_primary_action_default_border;
   box-sizing: border-box;
-  color: variables.$c_action_default_text;
+  color: variables.$c_primary_action_default_text;
   cursor: pointer;
   display: inline-block;
   line-height: 130%;
   padding: 8px 16px;
   text-align: center;
+  text-decoration: none;
   user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  @include mixins.pref_dark {
+    background-color: variables.$c_primary_action_default_surface--dark;
+    border: solid 1px variables.$c_primary_action_default_border--dark;
+    color: variables.$c_primary_action_default_text--dark;
+  }
   &::-moz-focus-inner { // remove inner focus border in Firefox
     padding: 0;
     border: 0;
   }
   &:hover,
   &:focus, {
-    background-color: variables.$c_action_hover_surface;
-    border-color: variables.$c_action_hover_border;
-    color: variables.$c_action_hover_text;
+    background-color: variables.$c_primary_action_hover_surface;
+    border-color: variables.$c_primary_action_hover_border;
+    color: variables.$c_primary_action_hover_text;
+    @include mixins.pref_dark {
+      background-color: variables.$c_primary_action_hover_surface--dark;
+      border-color: variables.$c_primary_action_hover_border--dark;
+      color: variables.$c_primary_action_hover_text--dark;
+    }
   }
   &:active {
-    background-color: variables.$c_action_pressed_surface;
-    border-color: variables.$c_action_pressed_border;
-    color: variables.$c_action_pressed_text;
+    background-color: variables.$c_primary_action_pressed_surface;
+    border-color: variables.$c_primary_action_pressed_border;
+    color: variables.$c_primary_action_pressed_text;
+    @include mixins.pref_dark {
+      background-color: variables.$c_primary_action_pressed_surface--dark;
+      border-color: variables.$c_primary_action_pressed_border--dark;
+      color: variables.$c_primary_action_pressed_text--dark;
+    }
   }
   &[disabled],
   &:disabled,
   &.-disabled {
-    background-color: variables.$c_action_disabled_surface;
-    border-color: variables.$c_action_disabled_border;
-    color: variables.$c_action_disabled_text;
+    background-color: variables.$c_primary_action_disabled_surface;
+    border-color: variables.$c_primary_action_disabled_border;
+    color: variables.$c_primary_action_disabled_text;
     cursor: not-allowed;
     pointer-events: none;
+    @include mixins.pref_dark {
+      background-color: variables.$c_primary_action_disabled_surface--dark;
+      border-color: variables.$c_primary_action_disabled_border--dark;
+      color: variables.$c_primary_action_disabled_text--dark;
+    }
+  }
+  &.-default {
+    border: none !important;
+    background-color: transparent !important;
+    color: variables.$c_text_primary;
+    @include mixins.pref_dark {
+      color: variables.$c_text_primary--dark;
+    }
+    &:hover {
+        color: variables.$c_primary_default;
+      @include mixins.pref_dark {
+        color: variables.$c_primary_default--dark;
+      }
+    }
+  }
+  &.-primary {
+    //todo
   }
   &.-seconday {
     //todo
@@ -49,13 +87,26 @@ button,
   &.-tertiary {
     //todo
   }
-  & .-md {
+  &.-ghost {
+    background-color: transparent !important;
+    color: variables.$c_text_primary;
+    @include mixins.pref_dark {
+      color: variables.$c_text_primary--dark;
+    }
+    &:hover {
+      color: variables.$c_primary_default;
+      @include mixins.pref_dark {
+        color: variables.$c_primary_default--dark;
+      }
+    }
+  }
+  &.-md {
     line-height: 160%;
     @include mixins.mq(lg) {
       @include mixins.font_size(18px);
     }
   }
-  & .-sm {
+  &.-sm {
     line-height: 160%;
   }
 }
@@ -94,7 +145,7 @@ input[type="color"] {
 }
 input[type="radio"],
 input[type="checkbox"] {
-  accent-color: variables.$c_action_default_surface;
+  accent-color: variables.$c_primary_action_default_surface;
 }
 input[type="button"],
 input[type="submit"],

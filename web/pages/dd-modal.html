@@ -8,9 +8,9 @@
         <p>This component is ideal for alerts, forms, confirmations, or additional content displays. In WordPress, configure it via ACF fields for modal triggers and content. In Drupal, use Paragraphs with fields for button text, modal content, and IDs.</p>
 
         <h2>Basic Usage</h2>
-        <p>Use buttons with <code>data-modal-open</code> and <code>data-id</code> attributes to open modals. The modal itself uses dialog with <code>data-modal</code> and a matching <code>id</code>. Include a close button with <code>data-modal-close</code> and <code>data-id</code> inside the modal.</p>
+        <p>Use buttons with <em>data-modal-open</em> and <em>data-id</em> attributes to open modals. The modal itself uses dialog with <em>data-modal</em> and a matching <em>id</em>. Include a close button with <em>data-modal-close</em> and <em>data-id</em> inside the modal.</p>
         <pre>
-<code id="escape_html">
+<code>
 <button data-modal-open data-id="example-modal">Open Modal</button>
 
 <dialog data-modal id="example-modal" class="dd-modal">
@@ -23,15 +23,21 @@
 </pre>
 
         <h2>CSS Modifiers</h2>
-        <p>Base styles for the modal include backdrop blur, centering, and responsive sizing. Modifiers can be added for custom appearances (e.g., size variants like <code>-large</code> or <code>-small</code> if defined in future SCSS).</p>
+        <p>Base styles for the modal include backdrop blur, centering, and responsive sizing.</p>
         <ul>
-          <li><code>[open]</code>: Applied when the dialog is open, for styling the backdrop and modal.</li>
+          <li><em>[open]</em>: Applied when the dialog is open, for styling the backdrop and modal.</li>
         </ul>
+
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/js/_dd_modal.js (animations)</li>
+                  <li>source/scss/components/_dd_modal.scss (styles)</li>
+                </ul>
 
         <h2>Accessibility and Best Practices</h2>
         <p>
           The dialog element provides automatic focus management and keyboard navigation (ESC to close). Ensure close buttons have proper
-          <code>aria-label</code>. Test with screen readers. In CMS, ensure modal content is meaningful and avoid nesting interactive elements.
+          <em>aria-label</em>. Test with screen readers. In CMS, ensure modal content is meaningful and avoid nesting interactive elements.
         </p>
       </div>
     </div>

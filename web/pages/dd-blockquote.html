@@ -8,10 +8,10 @@
         <p>This component is ideal for testimonials sections, blog pull-quotes, or about pages. In WordPress, configure it via ACF fields for quote text, name, title, image, and schema. In Drupal, use a Paragraph type with text fields for quote and details, plus an image field, rendering schema dynamically.</p>
 
         <h2>Basic Usage</h2>
-        <p>Use a blockquote with class <code>dd-blockquote</code> and data-aos for animations. Include structured elements for icon, person details, and comment. Add schema script for structured data.</p>
+        <p>Use a blockquote with class <em>dd-blockquote</em> and data-aos for animations. Include structured elements for icon, person details, and comment. Add schema script for structured data.</p>
 
 <pre>
-<code id="escape_html">
+<code>
 <blockquote class="dd-blockquote">
   <div class="dd-blockquote__content dd-g data-aos="fade-in">
     <div class="dd-blockquote__icon"><i class="fa-regular fa-message-quote"></i></div>
@@ -48,17 +48,23 @@
         <h2>CSS Modifiers (from _dd_blockquote.scss)</h2>
         <p>The SCSS file defines base styles for the blockquote, including centering, icons, and responsive sizing. Key modifiers include:</p>
         <ul>
-          <li><code>-left</code>: Aligns content to the left.</li>
-          <li><code>-right</code>: Aligns content to the right.</li>
-          <li><code>-no-icon</code>: Removes the quote icon.</li>
-          <li><code>-no-image</code>: Hides the person's image for text-only quotes.</li>
-          <li><code>-compact</code>: Reduces spacing and sizes for inline or smaller displays.</li>
+          <li><em>-left</em>: Aligns content to the left.</li>
+          <li><em>-right</em>: Aligns content to the right.</li>
+          <li><em>-no-icon</em>: Removes the quote icon.</li>
+          <li><em>-no-image</em>: Hides the person's image for text-only quotes.</li>
+          <li><em>-compact</em>: Reduces spacing and sizes for inline or smaller displays.</li>
           <li>
-              Utility classes for alignment. <code> -x-center -y-center </code>
+              Utility classes for alignment. <em> -x-center -y-center </em>
           </li>
           <li>
-              AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+              AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
           </li>
+        </ul>
+
+        <h2>Framework files</h2>
+        <ul>
+          <li>source/js/vendors/aos.js (animations)</li>
+          <li>source/scss/components/_dd_blockquote.scss (styles)</li>
         </ul>
 
         <p>For ACF/Paragraphs integration, map fields to generate schema and classes dynamically.</p>

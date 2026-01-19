@@ -68,6 +68,9 @@
   &__copy {
     border: solid 1px;
     background-color: variables.$c_ui_neutral_100;
+    @include mixins.pref_dark {
+      background-color: variables.$c_ui_neutral_100--dark;
+    }
     padding: 2%;
     text-align: center;
     @include mixins.mq(lg) {
@@ -80,7 +83,7 @@
     }
   }
   &__links {
-    // todo
+    gap: 1rem;
   }
   &__link {
     // todo

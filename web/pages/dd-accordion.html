@@ -5,7 +5,7 @@
             <div class="dd-section__item dd-u-1-1">
                 <h2>Overview</h2>
                 <p>
-                    The dd-accordion component provides a collapsible content structure. It leverages native HTML5 <details> and <summary> elements for accessibility and progressive enhancement, ensuring it works without JavaScript in modern browsers while allowing for JS enhancements.
+                    The dd-accordion component provides a collapsible content structure. It leverages native HTML5 <em>details</em> and <em>summary</em> elements for accessibility and progressive enhancement, ensuring it works without JavaScript in modern browsers while allowing for JS enhancements.
                 </p>
                 <p>
                     This component is ideal for FAQs, expandable sections, or grouped content. In WordPress, configure it via ACF repeater fields for accordion items (e.g., title and body). In Drupal, use a Paragraph type with fields for header and copy, rendered as a list of items.
@@ -13,14 +13,31 @@
 
                 <h2>Basic Usage</h2>
                 <p>
-                    Wrap accordion items in a container with class <code>dd-accordion</code>. Each item uses &lt;details&gt; with a shared <code>name</code> attribute (e.g., "group1") to enforce exclusive opening (only one open at a time). The &lt;summary&gt; acts as the toggle, and the content follows in &lt;div class="dd-accordion__copy"&gt;.
+                  Wrap accordion items in a container with class <em>dd-accordion</em>. Each item uses <em>details</em> with a shared <em>name</em> attribute (e.g., "group1") to enforce exclusive opening (only one open at a time). The <em>summary</em> acts as the toggle, and the content follows in <em>div</em> with a class of <em>class="dd-accordion__copy</em>.
                 </p>
 
                 <p>
-                    Add spacers (e.g., <code>&lt;div class="dd-spacer -xl"&gt;&lt;/div&gt;</code >) between items for visual separation if needed.
+                    Add spacers (e.g., <em>div class="dd-spacer -xl"</em>) between items for visual separation if needed.
                 </p>
 <pre>
-<code id="escape_html">
+<code>
+<div class="dd-accordion">
+    <div class="dd-accordion__items">
+        <details name="group1" class="dd-accordion__item">
+            <summary class="dd-accordion__header dd-g -y-center">
+                <div class="dd-accordion__title dd-u-1-1">
+                    Header Name
+                </div>
+            </summary>
+            <div class="dd-accordion__copy">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </details>
+    </div>
+</div>
+<div class="dd-spacer -xl"></div>
 <div class="dd-accordion">
     <div class="dd-accordion__items">
         <details name="group1" class="dd-accordion__item">
@@ -46,20 +63,26 @@
                 </p>
                 <ul>
                     <li>
-                        <code>[open]</code>: Applied to the &lt;details&gt; element when expanded (via attribute selector [open]). Rotates icons and adjusts borders or backgrounds for visual feedback.
+                        <em>[open]</em>: Applied to the <em>details</em> element when expanded (via attribute selector [open]). Rotates icons and adjusts borders or backgrounds for visual feedback.
                     </li>
                     <li>
-                        <code>-borderless</code>: Eliminates borders around items for a cleaner look.
+                        <em>-borderless</em>: Eliminates borders around items for a cleaner look.
                     </li>
                     <li>
-                        <code>-compact</code>: Reduces padding and font sizes for denser layouts, useful in sidebars or mobile views.
+                        <em>-compact</em>: Reduces padding and font sizes for denser layouts, useful in sidebars or mobile views.
                     </li>
                     <li>
-                        Utility classes for alignment. <code> -x-center -y-center </code>
+                        Utility classes for alignment. <em> -x-center -y-center </em>
                     </li>
                     <li>
-                        AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                        AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
                     </li>
+                </ul>
+
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/js/vendors/aos.js (animations)</li>
+                  <li>source/scss/components/_dd_accordion.scss (styles)</li>
                 </ul>
 
                 <p>

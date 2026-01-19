@@ -4,14 +4,14 @@
     <div class="dd-section__items dd-g">
       <div class="dd-section__item dd-u-1-1 l-box">
         <h2>Overview</h2>
-        <p>The dd-tabs component provides a tabbed interface for organizing content into switchable panels. It supports desktop navigation and a mobile dropdown menu, with ARIA attributes for accessibility, making it suitable for FAQs, product details, or multi-section content without page reloads.</p>
+        <p>The <em>dd-tabs</em> component provides a tabbed interface for organizing content into switchable panels. It supports desktop navigation and a mobile dropdown menu, with ARIA attributes for accessibility, making it suitable for FAQs, product details, or multi-section content without page reloads.</p>
         <p>This component is ideal for content-heavy pages where space-saving is key. In WordPress, configure it via ACF repeater fields for tab items (e.g., label, content, links). In Drupal, use a Paragraph type with fields for tab titles and bodies, rendered with unique data-id for scoping multiple instances.</p>
 
         <h2>Basic Usage</h2>
-        <p>Wrap tabs in a div with class <code>dd-tabs</code> and a unique data-id. Include navigation with menu items (ARIA roles) and content panels with aria-hidden and role="tabpanel".</p>
+        <p>Wrap tabs in a div with class <em>dd-tabs</em> and a unique data-id. Include navigation with menu items (ARIA roles) and content panels with aria-hidden and role="tabpanel".</p>
 
 <pre>
-<code id="escape_html">
+<code>
 <div class="dd-tabs" data-id="001">
   <div class="dd-tabs__content dd-g">
     <ul class="dd-tabs__menu dd-g">
@@ -46,10 +46,10 @@
         <h2>CSS Modifiers (from _dd_tabs.scss)</h2>
         <p>The SCSS file defines base styles for tabs, including responsive navigation (hidden menu on mobile), active states, and overflow handling. Key modifiers include:</p>
         <ul>
-          <li><code>-active</code>: Applied to active menu items and panels for visibility and styling.</li>
-          <li><code>-horizontal</code>: Adjusts for horizontal tab layouts if extended.</li>
-          <li><code>-vertical</code>: For vertical tab orientations (sidebar style).</li>
-          <li>Utility classes like AOS data attributes (e.g., <code>data-aos="fade-in"</code>) for panel animations.</li>
+          <li><em>-active</em>: Applied to active menu items and panels for visibility and styling.</li>
+          <li><em>-horizontal</em>: Adjusts for horizontal tab layouts if extended.</li>
+          <li><em>-vertical</em>: For vertical tab orientations (sidebar style).</li>
+          <li>Utility classes like AOS data attributes (e.g., <em>data-aos="fade-in"</em>) for panel animations.</li>
         </ul>
 
         <h2>Associated JavaScript (from dd_tabs.js)</h2>
@@ -63,6 +63,12 @@
         <p>Include the JS via your CMS: In WordPress, enqueue in functions.php; in Drupal, attach via libraries.yml.</p>
 
         <p>For ACF/Paragraphs integration, generate unique aria-controls from fields.</p>
+
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/js/components/_dd_tabs.scss (styles)</li>
+                  <li>source/scss/components/_dd_tabs.scss (styles)</li>
+                </ul>
 
         <h2>Accessibility and Best Practices</h2>
         <p>Use ARIA roles (tablist, tab, tabpanel) and attributes (aria-selected, aria-controls, aria-labelledby, aria-hidden). Ensure keyboard navigation (focus on tabs, enter/space to activate). Test with screen readers for announcements. In CMS, require unique labels and validate content for empty panels.</p>

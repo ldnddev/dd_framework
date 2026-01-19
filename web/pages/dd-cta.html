@@ -8,10 +8,10 @@
                 <p>This component is ideal for hero CTAs, mid-page promotions, or footers. In WordPress, configure it via ACF fields for background image, title, copy, links, and position select. In Drupal, use a Paragraph type with media field for background, text fields for content, and multi-value fields for links, rendering positioning via a select widget.</p>
 
                 <h2>Basic Usage</h2>
-                <p>Wrap the CTA in a div with class <code>dd-cta</code>. Include an image for background (hidden on desktop for CSS background), content overlay with title, body, and links. Use grid for link alignment.</p>
+                <p>Wrap the CTA in a div with class <em>dd-cta</em>. Include an image for background (hidden on desktop for CSS background), content overlay with title, body, and links. Use grid for link alignment.</p>
 
 <pre>
-<code id="escape_html">
+<code>
 <div class="dd-cta" data-aos="fade-in">
   <div class="dd-cta__image">
     <img srcset="https://dummyimage.com/720x405/000000/fff 720w, https://dummyimage.com/1920x1080/000000/fff 721w" sizes="(max-width: 720px) 720px, (min-width: 721px) 721px" src="https://dummyimage.com/1920x1080/000000/fff" alt="CTA alt tag for image" />
@@ -37,7 +37,7 @@
           <a href="#" class="dd-button -primary">CTA Link 1</a>
         </div>
         <div class="dd-cta__link">
-          <a href="#" class="dd-button -secondary">CTA Link 2</a>
+          <a href="#" class="dd-button -ghost">CTA Link 2</a>
         </div>
       </div>
     </div>
@@ -51,21 +51,27 @@
                 <h2>CSS Modifiers (from _dd_cta.scss)</h2>
                 <p>The SCSS file defines base styles for the CTA, including cover backgrounds and content positioning. Key modifiers for .dd-cta__content include:</p>
                 <ul>
-                  <li><code>-bg-top-left</code>: Positions copy at top-left of background.</li>
-                  <li><code>-bg-top-center</code>: Positions at top-center.</li>
-                  <li><code>-bg-top-right</code>: Positions at top-right.</li>
-                  <li><code>-bg-center-left</code>: Positions at center-left.</li>
-                  <li><code>-bg-center-center</code>: Positions at center-center (default).</li>
-                  <li><code>-bg-center-right</code>: Positions at center-right.</li>
-                  <li><code>-bg-bottom-left</code>: Positions at bottom-left.</li>
-                  <li><code>-bg-bottom-center</code>: Positions at bottom-center.</li>
-                  <li><code>-bg-bottom-right</code>: Positions at bottom-right.</li>
+                  <li><em>-bg-top-left</em>: Positions copy at top-left of background.</li>
+                  <li><em>-bg-top-center</em>: Positions at top-center.</li>
+                  <li><em>-bg-top-right</em>: Positions at top-right.</li>
+                  <li><em>-bg-center-left</em>: Positions at center-left.</li>
+                  <li><em>-bg-center-center</em>: Positions at center-center (default).</li>
+                  <li><em>-bg-center-right</em>: Positions at center-right.</li>
+                  <li><em>-bg-bottom-left</em>: Positions at bottom-left.</li>
+                  <li><em>-bg-bottom-center</em>: Positions at bottom-center.</li>
+                  <li><em>-bg-bottom-right</em>: Positions at bottom-right.</li>
                   <li>
-                      Utility classes for alignment. <code> -x-center -y-center </code>
+                      Utility classes for alignment. <em> -x-center -y-center </em>
                   </li>
                   <li>
-                      AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                      AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
                   </li>
+                </ul>
+
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/js/vendors/aos.js (animations)</li>
+                  <li>source/scss/components/_dd_cta.scss (styles)</li>
                 </ul>
 
                 <p>For ACF/Paragraphs integration, map fields to generate inline styles and classes dynamically.</p>
@@ -98,7 +104,7 @@
           <a href="#" class="dd-button -primary">CTA Link 1</a>
         </div>
         <div class="dd-cta__link">
-          <a href="#" class="dd-button -secondary">CTA Link 2</a>
+          <a href="#" class="dd-button -ghost">CTA Link 2</a>
         </div>
       </div>
     </div>
@@ -132,7 +138,7 @@
           <a href="#" class="dd-button -primary">CTA Link 1</a>
         </div>
         <div class="dd-cta__link">
-          <a href="#" class="dd-button -secondary">CTA Link 2</a>
+          <a href="#" class="dd-button -ghost">CTA Link 2</a>
         </div>
       </div>
     </div>
@@ -166,7 +172,7 @@
           <a href="#" class="dd-button -primary">CTA Link 1</a>
         </div>
         <div class="dd-cta__link">
-          <a href="#" class="dd-button -secondary">CTA Link 2</a>
+          <a href="#" class="dd-button -ghost">CTA Link 2</a>
         </div>
       </div>
     </div>
@@ -200,7 +206,7 @@
           <a href="#" class="dd-button -primary">CTA Link 1</a>
         </div>
         <div class="dd-cta__link">
-          <a href="#" class="dd-button -secondary">CTA Link 2</a>
+          <a href="#" class="dd-button -ghost">CTA Link 2</a>
         </div>
       </div>
     </div>
@@ -234,7 +240,7 @@
           <a href="#" class="dd-button -primary">CTA Link 1</a>
         </div>
         <div class="dd-cta__link">
-          <a href="#" class="dd-button -secondary">CTA Link 2</a>
+          <a href="#" class="dd-button -ghost">CTA Link 2</a>
         </div>
       </div>
     </div>

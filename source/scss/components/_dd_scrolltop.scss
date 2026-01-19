@@ -14,11 +14,13 @@
     right: 0px;
   }
   &__link {
-    border: solid 1px variables.$c_ui_neutral_300;
+    border: solid 1px;
     font-size: 25px;
     border-right: none;
     background-color: variables.$c_ui_neutral_100;
-    color: variables.$c_text_primary;
+    @include mixins.pref_dark {
+      background-color: variables.$c_ui_neutral_100--dark;
+    }
     cursor: pointer;
     @include mixins.border_radius(7px, 0px, 0px, 7px);
     @include mixins.box_shadow();

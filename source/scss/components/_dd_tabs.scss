@@ -20,7 +20,7 @@
   &__menu-link {
     text-decoration: none;
     &.-active {
-      border-bottom: solid 1px variables.$c_action_default_border;
+      border-bottom: solid 1px;
     }
   }
   &__items {

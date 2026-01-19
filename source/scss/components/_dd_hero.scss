@@ -34,6 +34,10 @@
   &__copy {
     @include mixins.position_relative();
     background-color: variables.$c_ui_neutral_100;
+    @include mixins.pref_dark {
+      background-color: variables.$c_ui_neutral_100--dark;
+    }
+    border: solid 1px;
     display: flex;
     flex-direction: column;
     justify-content: center;

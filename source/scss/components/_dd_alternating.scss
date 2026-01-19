@@ -10,9 +10,7 @@
         padding-bottom: 0px;
     }
     &__item {
-        background-color: variables.$c_ui_neutral_100;
         &:nth-child(even) {
-            background-color: variables.$c_ui_neutral_200;
             @include mixins.mq(lg) {
                 & .dd-alternating__image {
                     order: 2;

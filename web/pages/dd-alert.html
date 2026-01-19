@@ -8,10 +8,10 @@
                   <p>This component is ideal for form validation feedback, system messages, or user notifications. In WordPress, configure it via ACF fields for alert type, heading, and text. In Drupal, use a Paragraph type with select fields for type and text areas for content, allowing dynamic rendering based on conditions.</p>
 
                   <h2>Basic Usage</h2>
-                  <p>Wrap the alert content in a container with class <code>dd-alert</code> and role="alert" for accessibility. Include a heading and text, with optional links. Use AOS for fade-in animations.</p>
+                  <p>Wrap the alert content in a container with class <em>dd-alert</em> and <em>role="alert"</em> for accessibility. Include a heading and text, with optional links. Use AOS for fade-in animations.</p>
 
 <pre>
-<code id="escape_html">
+<code>
 <div class="dd-alert" role="alert" data-aos="fade-in">
   <div class="dd-alert__content dd-g">
     <div class="dd-u-1-1">
@@ -44,6 +44,12 @@
                     <li>
                         AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
                     </li>
+                  </ul>
+
+                  <h2>Framework files</h2>
+                  <ul>
+                    <li>source/js/vendors/aos.js (animations)</li>
+                    <li>source/scss/components/_dd_alert.scss (styles)</li>
                   </ul>
 
                   <h2>Accessibility and Best Practices</h2>

@@ -8,9 +8,9 @@
         <p>This component is ideal for about pages, dashboards, or impact reports. In WordPress, configure it via ACF repeater fields for milestone items (e.g., number, title, subtitle, copy, link). In Drupal, use a Paragraph type with fields for each milestone element, rendered in a grid loop.</p>
 
         <h2>Basic Usage</h2>
-        <p>Wrap milestones in a div with class <code>dd-milestones</code>. Use a grid for items, each with a body containing the percentage (with data-number), title, subtitle, copy, and link. Add AOS for fade animations.</p>
+        <p>Wrap milestones in a div with class <em>dd-milestones</em>. Use a grid for items, each with a body containing the percentage (with data-number), title, subtitle, copy, and link. Add AOS for fade animations.</p>
 <pre>
-<code id="escape_html">
+<code>
 <div class="dd-milestones">
   <div class="dd-milestones__content">
     <div class="dd-milestones__items dd-g"><!-- milestones loop inside items -->
@@ -34,14 +34,21 @@
         <h2>CSS Modifiers (from _dd_milestones.scss)</h2>
         <p>The SCSS file defines base styles for milestones, including grid layout, shadows on bodies, and animation classes for visibility. Key modifiers include:</p>
         <ul>
-          <li><code>-horizontal</code>: Adjusts for horizontal item flow if needed.</li>
-          <li>Utility classes like AOS data attributes (e.g., <code>data-aos="fade-up"</code>) for custom entrances, or grid utilities for column adjustments.</li>
+          <li><em>-horizontal</em>: Adjusts for horizontal item flow if needed.</li>
+          <li>Utility classes like AOS data attributes (e.g., <em>data-aos="fade-up"</em>) for custom entrances, or grid utilities for column adjustments.</li>
         </ul>
 
         <h2>Associated JavaScript (from dd_milestones.js)</h2>
         <p>The component includes a JS file for animating the percentage counters, triggered on window load (or via dd_animate.js) to increment numbers from 0 to data-number value.</p>
 
         <p>For ACF/Paragraphs integration, map number fields to data-number attributes dynamically.</p>
+
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/js/_dd_milestones.js (animations)</li>
+                  <li>source/js/vendors/aos.js (animations)</li>
+                  <li>source/scss/components/_dd_milestones.scss (styles)</li>
+                </ul>
 
         <h2>Accessibility and Best Practices</h2>
         <p>Use aria-live for dynamic counter updates if needed. Ensure colors contrast for percentages. Add units or labels for clarity. Test screen reader announcements of final values. In CMS, validate number fields as integers and provide fallbacks for no-JS (show final value statically).</p>

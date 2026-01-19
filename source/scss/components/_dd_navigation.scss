@@ -40,6 +40,9 @@
   }
   & .sub-menu {
     background-color: variables.$c_ui_neutral_100;
+    @include mixins.pref_dark {
+      background-color: variables.$c_ui_neutral_100--dark;
+    }
     z-index: 2000;
     @include mixins.position_relative();
   }
@@ -100,7 +103,10 @@
         }
       }
       &:hover {
-        color: variables.$c_action_hover_text;
+        color: variables.$c_primary_action_hover_text;
+        @include mixins.pref_dark {
+          color: variables.$c_primary_action_hover_text--dark;
+        }
       }
       &.-active {
         & > a {
@@ -134,6 +140,9 @@
     z-index: 2000;
     &.-main-menu {
       background-color: variables.$c_ui_neutral_100;
+      @include mixins.pref_dark {
+        background-color: variables.$c_ui_neutral_100--dark;
+      }
       top: 90px;
       height: calc(100vh - 90px);
       display: flex;

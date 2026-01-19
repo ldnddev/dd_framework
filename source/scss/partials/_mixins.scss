@@ -144,12 +144,12 @@
   border-radius: $top $right $bottom $left !important;
 }
 
-@mixin box_shadow($x: 0px, $y: 0px, $b: 10px, $s: 0, $c: #{variables.$c_ui_neutral_300--dark}) {
+@mixin box_shadow($x: 0px, $y: 0px, $b: 10px, $s: 0, $c: #{variables.$c_ui_neutral_900}) {
   -webkit-box-shadow: $x $y $b $s $c;
   -moz-box-shadow: $x $y $b $s $c;
   box-shadow: $x $y $b $s $c;
   @media (prefers-color-scheme: dark) {
-    $c: variables.$c_ui_neutral_300;
+    $c: variables.$c_ui_neutral_900--dark;
     -webkit-box-shadow: $x $y $b $s $c;
     -moz-box-shadow: $x $y $b $s $c;
     box-shadow: $x $y $b $s $c;

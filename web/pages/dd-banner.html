@@ -8,18 +8,18 @@
                   <p>This component is ideal for landing pages or section dividers. In WordPress, configure it via ACF fields for image upload, alt text, and position modifier. In Drupal, use a Paragraph type with image field and select list for background position, rendering the style attribute dynamically.</p>
 
                   <h2>Basic Usage</h2>
-                  <p>Use a div with class <code>dd-banner</code> and data-aos for animations. Set background-image via inline style, with an img element for foreground or fallback, using srcset for responsiveness.</p>
+                  <p>Use a div with class <em>dd-banner</em> and data-aos for animations. Set background-image via inline style, with an img element for foreground or fallback, using srcset for responsiveness.</p>
 
 <pre>
-<code id="escape_html">
-<div class="dd-banner" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+<code>
+<div class="dd-banner" data-aos="fade-in" style="background-image: url(https://dummyimage.com/1440x600/000/fff);">
   <div class="dd-banner__image">
   <img
-    sizes="(max-width: 720px) 100vw 720px"
+    sizes="(max-width: 1024px) 100vw 1024px"
     srcset="
-      https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
-      https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
-    src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+      https://dummyimage.com/720x400/000/fff 720w
+      https://dummyimage.com/1440x600/000/fff 1024w"
+    src="https://dummyimage.com/1440x600/000/fff" class="dd-img" alt="Banner image description" />
   </div>
 </div>
 </code>
@@ -29,18 +29,24 @@
                   <h2>CSS Modifiers (from _dd_banner.scss)</h2>
                   <p>The SCSS file defines base styles for the banner, including full-width, background sizing (cover/contain), and positioning utilities. Key modifiers include:</p>
                   <ul>
-                    <li><code>-bg-top-left</code>: Positions background at top-left.</li>
-                    <li><code>-bg-top-center</code>: Positions at top-center.</li>
-                    <li><code>-bg-top-right</code>: Positions at top-right.</li>
-                    <li><code>-bg-center-left</code>: Positions at center-left.</li>
-                    <li><code>-bg-center-center</code>: Positions at center-center (default if none specified).</li>
-                    <li><code>-bg-center-right</code>: Positions at center-right.</li>
-                    <li><code>-bg-bottom-left</code>: Positions at bottom-left.</li>
-                    <li><code>-bg-bottom-center</code>: Positions at bottom-center.</li>
-                    <li><code>-bg-bottom-right</code>: Positions at bottom-right.</li>
+                    <li><em>-bg-top-left</em>: Positions background at top-left.</li>
+                    <li><em>-bg-top-center</em>: Positions at top-center.</li>
+                    <li><em>-bg-top-right</em>: Positions at top-right.</li>
+                    <li><em>-bg-center-left</em>: Positions at center-left.</li>
+                    <li><em>-bg-center-center</em>: Positions at center-center (default if none specified).</li>
+                    <li><em>-bg-center-right</em>: Positions at center-right.</li>
+                    <li><em>-bg-bottom-left</em>: Positions at bottom-left.</li>
+                    <li><em>-bg-bottom-center</em>: Positions at bottom-center.</li>
+                    <li><em>-bg-bottom-right</em>: Positions at bottom-right.</li>
                     <li>
-                        AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                        AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
                     </li>
+                  </ul>
+
+                  <h2>Framework files</h2>
+                  <ul>
+                    <li>source/js/vendors/aos.js (animations)</li>
+                    <li>source/scss/components/_dd_banner.scss (styles)</li>
                   </ul>
 
                   <h2>Accessibility and Best Practices</h2>
@@ -55,14 +61,14 @@
     <div class="dd-section__items dd-g">
 
       <div class="dd-section__item dd-u-1-1">
-        <div class="dd-banner" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+        <div class="dd-banner" data-aos="fade-in" style="background-image: url(https://dummyimage.com/1440x600/000/fff);">
           <div class="dd-banner__image">
           <img
-            sizes="(max-width: 720px) 100vw 720px"
+            sizes="(max-width: 1024px) 100vw 1024px"
             srcset="
-              https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
-              https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
-            src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+              https://dummyimage.com/720x400/000/fff 720w
+              https://dummyimage.com/1440x600/000/fff 1024w"
+            src="https://dummyimage.com/1440x600/000/fff" class="dd-img" alt="Banner image description" />
           </div>
         </div>
       </div>
@@ -70,14 +76,14 @@
       <div class="dd-spacer -xl"></div>
 
       <div class="dd-section__item dd-u-1-1">
-        <div class="dd-banner -bg-top-left" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+        <div class="dd-banner -bg-top-left" data-aos="fade-in" style="background-image: url(https://dummyimage.com/1440x600/000/fff);">
           <div class="dd-banner__image">
           <img
-            sizes="(max-width: 720px) 100vw 720px"
+            sizes="(max-width: 1024px) 100vw 1024px"
             srcset="
-              https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
-              https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
-            src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+              https://dummyimage.com/720x400/000/fff 720w
+              https://dummyimage.com/1440x600/000/fff 1024w"
+            src="https://dummyimage.com/1440x600/000/fff" class="dd-img" alt="Banner image description" />
           </div>
         </div>
       </div>
@@ -85,14 +91,14 @@
       <div class="dd-spacer -xl"></div>
 
       <div class="dd-section__item dd-u-1-1">
-        <div class="dd-banner -bg-bottom-right" data-aos="fade-in" style="background-image: url(https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w);">
+        <div class="dd-banner -bg-bottom-right" data-aos="fade-in" style="background-image: url(https://dummyimage.com/1440x600/000/fff);">
           <div class="dd-banner__image">
           <img
-            sizes="(max-width: 720px) 100vw 720px"
+            sizes="(max-width: 1024px) 100vw 1024px"
             srcset="
-              https://fastly.picsum.photos/id/672/320/180.jpg?grayscale&hmac=hS-tIhbIFbohP79ALMtOii4mJHTKHSV3FKGU7QWxA7Y 320w
-              https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w 720w"
-            src="https://fastly.picsum.photos/id/280/720/405.jpg?grayscale&hmac=KjG152dDE2E7wA8RUHhwejGmj_fMIFDX0b07GjeiV4w" class="dd-img" alt="Banner image description" />
+              https://dummyimage.com/720x400/000/fff 720w
+              https://dummyimage.com/1440x600/000/fff 1024w"
+            src="https://dummyimage.com/1440x600/000/fff" class="dd-img" alt="Banner image description" />
           </div>
         </div>
       </div>

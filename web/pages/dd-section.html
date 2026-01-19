@@ -8,9 +8,9 @@
         <p>This component is ideal for dividing pages into logical sections, such as intros, features, or footers. In WordPress, configure it via ACF flexible content or layouts for section types, with fields for full/contained, title, and inner items. In Drupal, use a Paragraph type as a section wrapper, nesting other paragraphs inside, with options for modifiers.</p>
 
         <h2>Basic Usage</h2>
-        <p>Use a section with class <code>dd-section</code> for contained width or add <code>-full</code> for full-width. Include content with title and items in a grid. Backgrounds alternate automatically via CSS.</p>
+        <p>Use a section with class <em>dd-section</em> for contained width or add <em>-full</em> for full-width. Include content with title and items in a grid. Backgrounds alternate automatically via CSS.</p>
 <pre>
-<code id="escape_html">
+<code>
 <section class="dd-section -full">
   <div class="dd-section__content -full">
     <div class="dd-section__title l-box">Section Title</div>
@@ -23,22 +23,48 @@
 </section>
 </code>
 </pre>
+
+<pre>
+<code>
+<section class="dd-section">
+  <div class="dd-section__content -contained">
+    <div class="dd-section__title l-box">Section "contained" with max width set</div>
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u-1-1 dd-u-lg-8-24 l-box">
+        Section Item goes here. This item can be any of the other components.
+      </div>
+      <div class="dd-section__item dd-u-1-1 dd-u-lg-8-24 l-box">
+        Section Item goes here. This item can be any of the other components.
+      </div>
+      <div class="dd-section__item dd-u-1-1 dd-u-lg-8-24 l-box">
+        Section Item goes here. This item can be any of the other components.
+      </div>
+    </div>
+  </div>
+</section>
+</code>
+</pre>
         <p>Nest other components inside __items for modular builds; use l-box for padding on items.</p>
 
         <h2>CSS Modifiers (from _dd_section.scss)</h2>
         <p>The SCSS file defines base styles for sections, including default padding, max-width, and alternating backgrounds via :nth-child. Key modifiers include:</p>
         <ul>
-          <li><code>-full</code>: Sets max-width to 100% for full-width sections (apply to both section and __content).</li>
-          <li><code>-contained</code>: Limits __content to a max-width (default behavior; explicit for overrides).</li>
-          <li><code>-no-padding</code>: Removes default padding for custom spacing.</li>
+          <li><em>-full</em>: Sets max-width to 100% for full-width sections (apply to both section and __content).</li>
+          <li><em>-contained</em>: Limits __content to a max-width (default behavior; explicit for overrides).</li>
+          <li><em>-no-padding</em>: Removes default padding for custom spacing.</li>
           <li>
-              Utility classes for alignment. <code> -x-center -y-center </code>
+              Utility classes for alignment. <em> -x-center -y-center </em>
           </li>
           <li>
-              AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+              AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
           </li>
 
         </ul>
+
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/scss/components/_dd_section.scss (styles)</li>
+                </ul>
 
         <p>For ACF/Paragraphs integration, use conditional fields to apply modifiers dynamically.</p>
 

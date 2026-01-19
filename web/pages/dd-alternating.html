@@ -13,11 +13,11 @@
 
                 <h2>Basic Usage</h2>
                 <p>
-                    Wrap items in a container with class <code>dd-alternating</code> and role="region" for accessibility. Each item contains a grid with image and copy columns that stack on mobile and side-by-side on larger screens. Use AOS attributes for fade animations.
+                    Wrap items in a container with class <em>dd-alternating</em> and <em>role="region"</em> for accessibility. Each item contains a grid with image and copy columns that stack on mobile and side-by-side on larger screens. Use AOS attributes for fade animations.
                 </p>
 
 <pre>
-<code id="escape_html">
+<code>
 <div class="dd-alternating" role="region">
     <div class="dd-alternating__items dd-g">
         <div class="dd-alternating__item dd-u-1-1">
@@ -25,7 +25,7 @@
                 <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
                     <img src="https://dummyimage.com/600x400/000/fff" class="dd-img" alt="" />
                 </div>
-                <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
+                <div class="dd-alternating__copy l-box dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
                     <div class="dd-alternating__title">
                         <h2>Alternating title</h2>
                     </div>
@@ -48,7 +48,7 @@
 </code>
 </pre>
                 <p>
-                    The framework uses CSS :nth-child(odd/even) to alternate image/copy positions automatically.
+                    The framework uses CSS <em>:nth-child(odd/even)</em> to alternate image/copy positions automatically.
                 </p>
 
                 <h2>CSS Modifiers (from _dd_alternating.scss)</h2>
@@ -57,36 +57,43 @@
                 </p>
                 <ul>
                     <li>
-                        <code>-reverse</code>: Reverses the default alternating direction (e.g., starts with copy on left).
+                        <em>-reverse</em>: Reverses the default alternating direction (e.g., starts with copy on left).
                     </li>
                     <li>
-                        <code>-no-alternate</code>: Disables alternating, keeping all items in the same order (image left, copy right).
+                        <em>-no-alternate</em>: Disables alternating, keeping all items in the same order (image left, copy right).
                     </li>
                     <li>
-                        Utility classes for alignment. <code> -x-center -y-center </code>
+                        Utility classes for alignment. <em> -x-center -y-center </em>
                     </li>
                     <li>
-                        AOS data attributes for custom animations. <code>data-aos="fade-up"</code>
+                        AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
                     </li>
                 </ul>
                 <p>
                     For ACF/Paragraphs integration, use repeater sub-fields to generate items dynamically, with optional fields for custom modifiers.
                 </p>
 
+                <h2>Framework files</h2>
+                <ul>
+                  <li>source/js/vendors/aos.js (animations)</li>
+                  <li>source/scss/components/_dd_alternating.scss (styles)</li>
+                </ul>
+
                 <h2>Accessibility and Best Practices</h2>
                 <p>
-                    Use descriptive alt text for images. Ensure copy uses semantic headings. The role="region" helps screen readers identify the section. Test keyboard navigation and color contrast. In CMS, validate image uploads for alt text requirements.
+                    Use descriptive alt text for images. Ensure copy uses semantic headings. The <em>role="region"</em> helps screen readers identify the section. Test keyboard navigation and color contrast. In CMS, validate image uploads for alt text requirements.
                 </p>
             </div>
 
             <div class="dd-alternating" role="region">
                 <div class="dd-alternating__items dd-g">
-                    <div class="dd-alternating__item dd-u-1-1">
+
+                  <div class="dd-alternating__item dd-u-1-1">
                         <div class="dd-alternating__content dd-g">
                             <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
                                 <img src="https://dummyimage.com/600x400/000/fff" class="dd-img" alt="" />
                             </div>
-                            <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
+                            <div class="dd-alternating__copy l-box dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
                                 <div class="dd-alternating__title">
                                     <h2>Alternating title</h2>
                                 </div>
@@ -97,7 +104,7 @@
                                             <a href="#" class="dd-button">Alternating Link 1</a>
                                         </div>
                                         <div class="dd-alternating__link">
-                                            <a href="#" class="dd-button">Alternating Link 2</a>
+                                            <a href="#" class="dd-button -ghost">Alternating Link 2</a>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +117,7 @@
                             <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
                                 <img src="https://dummyimage.com/600x400/000/fff" class="dd-img" alt="" />
                             </div>
-                            <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
+                            <div class="dd-alternating__copy l-box dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
                                 <div class="dd-alternating__title">
                                     <h2>Alternating title</h2>
                                 </div>
@@ -121,7 +128,7 @@
                                             <a href="#" class="dd-button">Alternating Link 1</a>
                                         </div>
                                         <div class="dd-alternating__link">
-                                            <a href="#" class="dd-button">Alternating Link 2</a>
+                                            <a href="#" class="dd-button -ghost">Alternating Link 2</a>
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +138,6 @@
                 </div>
             </div>
 
-            /div>
         </div>
     </div>
 </div>

@@ -3,6 +3,9 @@
 
 a {
   color: variables.$c_text_primary;
+  @include mixins.pref_dark {
+    color: variables.$c_text_primary--dark;
+  }
   @include mixins.bg_transition(0.4s);
 
   &[href*="mailto:"]::before {
@@ -36,6 +39,9 @@ address {
 
 abbr {
   color: variables.$c_text_secondary;
+  @include mixins.pref_dark {
+    color: variables.$c_text_secondary--dark;
+  }
   @include mixins.bg_transition(.4s);
   @include mixins.font_base();
 }
@@ -52,6 +58,10 @@ cite {
 code {
   border: solid 1px variables.$c_ui_neutral_300;
   border-left: solid 5px variables.$c_ui_neutral_300;
+  @include mixins.pref_dark {
+    border: solid 1px variables.$c_ui_neutral_300--dark;
+    border-left: solid 5px variables.$c_ui_neutral_300--dark;
+  }
   display: block;
   margin-bottom: 20px;
   padding: 8px;
@@ -62,6 +72,9 @@ data {
   @include mixins.font_base();
   @include mixins.font_size(12px);
   color: variables.$c_text_disabled;
+  @include mixins.pref_dark {
+    color: variables.$c_text_disabled--dark;
+  }
   content: ' (ID ' attr(value) ')';
 }
 

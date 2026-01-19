@@ -32,6 +32,9 @@ h6,
 .display {
   @include mixins.font_headline(bold);
   color: variables.$c_text_primary;
+  @include mixins.pref_dark {
+    color: variables.$c_text_primary--dark;
+  }
 }
 
 .display {
