@@ -5,10 +5,7 @@ button,
 .dd-button {
   @include mixins.bg_transition();
   @include mixins.border_radius(0,0,0,0);
-  background-color: variables.$c_primary_action_default_surface;
-  border: solid 1px variables.$c_primary_action_default_border;
   box-sizing: border-box;
-  color: variables.$c_primary_action_default_text;
   cursor: pointer;
   display: inline-block;
   line-height: 130%;
@@ -20,10 +17,12 @@ button,
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  background-color: transparent;
+  border: solid 1px variables.$c_support_border;
+  color: variables.$c_text_primary;
   @include mixins.pref_dark {
-    background-color: variables.$c_primary_action_default_surface--dark;
-    border: solid 1px variables.$c_primary_action_default_border--dark;
-    color: variables.$c_primary_action_default_text--dark;
+    border: solid 1px variables.$c_support_border--dark;
+    color: variables.$c_text_primary--dark;
   }
   &::-moz-focus-inner { // remove inner focus border in Firefox
     padding: 0;
@@ -31,74 +30,110 @@ button,
   }
   &:hover,
   &:focus, {
-    background-color: variables.$c_primary_action_hover_surface;
-    border-color: variables.$c_primary_action_hover_border;
-    color: variables.$c_primary_action_hover_text;
+    border-color: variables.$c_support_focus;
+    color: variables.$c_support_focus;
     @include mixins.pref_dark {
-      background-color: variables.$c_primary_action_hover_surface--dark;
-      border-color: variables.$c_primary_action_hover_border--dark;
-      color: variables.$c_primary_action_hover_text--dark;
+      border-color: variables.$c_support_focus--dark;
+      color: variables.$c_support_focus--dark;
     }
   }
   &:active {
-    background-color: variables.$c_primary_action_pressed_surface;
-    border-color: variables.$c_primary_action_pressed_border;
-    color: variables.$c_primary_action_pressed_text;
+    border-color: variables.$c_support_focus;
+    color: variables.$c_support_focus;
     @include mixins.pref_dark {
-      background-color: variables.$c_primary_action_pressed_surface--dark;
-      border-color: variables.$c_primary_action_pressed_border--dark;
-      color: variables.$c_primary_action_pressed_text--dark;
+      border-color: variables.$c_support_focus--dark;
+      color: variables.$c_support_focus--dark;
     }
   }
   &[disabled],
   &:disabled,
   &.-disabled {
-    background-color: variables.$c_primary_action_disabled_surface;
-    border-color: variables.$c_primary_action_disabled_border;
-    color: variables.$c_primary_action_disabled_text;
     cursor: not-allowed;
     pointer-events: none;
+    border-color: variables.$c_support_disabled;
+    color: variables.$c_text_disabled;
     @include mixins.pref_dark {
-      background-color: variables.$c_primary_action_disabled_surface--dark;
-      border-color: variables.$c_primary_action_disabled_border--dark;
-      color: variables.$c_primary_action_disabled_text--dark;
+      border-color: variables.$c_support_disabled--dark;
+      color: variables.$c_text_disabled--dark;
     }
   }
   &.-default {
     border: none !important;
-    background-color: transparent !important;
     color: variables.$c_text_primary;
     @include mixins.pref_dark {
       color: variables.$c_text_primary--dark;
     }
-    &:hover {
-        color: variables.$c_primary_default;
+    &:hover,
+    &:focus,
+    &:active {
+      color: variables.$c_support_focus;
       @include mixins.pref_dark {
-        color: variables.$c_primary_default--dark;
+        color: variables.$c_support_focus--dark;
       }
     }
   }
   &.-primary {
-    //todo
+    background-color: variables.$c_primary_action_default_surface;
+    border-color: variables.$c_primary_action_default_border;
+    color: variables.$c_primary_action_default_text;
+    @include mixins.pref_dark {
+      background-color: variables.$c_primary_action_default_surface--dark;
+      border-color: variables.$c_primary_action_default_border--dark;
+      color: variables.$c_primary_action_default_text--dark;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: variables.$c_primary_action_hover_surface;
+      color: variables.$c_primary_action_hover_text;
+      @include mixins.pref_dark {
+        background-color: variables.$c_primary_action_hover_surface--dark;
+      color: variables.$c_primary_action_hover_text--dark;
+      }
+    }
   }
-  &.-seconday {
-    //todo
+  &.-secondary {
+    background-color: variables.$c_secondary_action_default_surface;
+    border-color: variables.$c_secondary_action_default_border;
+    color: variables.$c_secondary_action_default_text;
+    @include mixins.pref_dark {
+      background-color: variables.$c_secondary_action_default_surface--dark;
+      border-color: variables.$c_secondary_action_default_border--dark;
+      color: variables.$c_secondary_action_default_text--dark;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: variables.$c_secondary_action_hover_surface;
+      color: variables.$c_secondary_action_hover_text;
+      @include mixins.pref_dark {
+        background-color: variables.$c_secondary_action_hover_surface--dark;
+        color: variables.$c_secondary_action_hover_text--dark;
+      }
+    }
   }
   &.-tertiary {
-    //todo
+    background-color: variables.$c_tertiary_action_default_surface;
+    border-color: variables.$c_tertiary_action_default_border;
+    color: variables.$c_tertiary_action_default_text;
+    @include mixins.pref_dark {
+      background-color: variables.$c_tertiary_action_default_surface--dark;
+      border-color: variables.$c_tertiary_action_default_border--dark;
+      color: variables.$c_tertiary_action_default_text--dark;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: variables.$c_tertiary_action_hover_surface;
+      color: variables.$c_tertiary_action_hover_text;
+      @include mixins.pref_dark {
+        background-color: variables.$c_tertiary_action_hover_surface--dark;
+        color: variables.$c_tertiary_action_hover_text--dark;
+      }
+    }
   }
   &.-ghost {
     background-color: transparent !important;
-    color: variables.$c_text_primary;
-    @include mixins.pref_dark {
-      color: variables.$c_text_primary--dark;
-    }
-    &:hover {
-      color: variables.$c_primary_default;
-      @include mixins.pref_dark {
-        color: variables.$c_primary_default--dark;
-      }
-    }
   }
   &.-md {
     line-height: 160%;

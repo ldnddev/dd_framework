@@ -47,15 +47,12 @@ hr {
 }
 
 ol {
-  list-style: none;
   li {
-    &::before {
-      content: counter(li);
-      display: inline-block;
-      width: 1em;
-      margin-left: -1.5em;
-      direction: rtl;
-      @include mixins.font_headline();
+    &::marker {
+      color: variables.$c_success_border;
+      @include mixins.pref_dark {
+        color: variables.$c_success_border--dark;
+      }
     }
   }
 }
@@ -69,20 +66,18 @@ pre {
 }
 
 ul {
-  list-style: none;
   & li {
-    &::before {
-      content: "\2022";
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-      @include mixins.font_headline();
+    &::marker {
+      color: variables.$c_success_border;
+      @include mixins.pref_dark {
+        color: variables.$c_success_border--dark;
+      }
     }
   }
   &.-nostyle {
     padding: 0px;
-    & li::before {
+    list-style: none;
+    & li::marker {
       display: none;
     }
   }
