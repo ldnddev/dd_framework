@@ -1,25 +1,59 @@
 <h1>Alternating Content Component Breakdown</h1>
 <div class="dd-section">
-    <div class="dd-section__content">
-        <div class="dd-section__items dd-g">
-            <div class="dd-section__item dd-u0-1">
-                <h2>Overview</h2>
-                <p>
-                    The dd-alternating component provides a layout for alternating content blocks, typically featuring an image on one side and text on the other, which switches sides for each subsequent item. This creates a visually engaging zigzag pattern, ideal for showcasing features, benefits, or narrative sections.
-                </p>
-                <p>
-                    This component is great for pages like "About Us," product features, or case studies. In WordPress, configure it via ACF repeater fields for alternating items (e.g., image, title, body, links). In Drupal, use a Paragraph type with fields for image and copy, rendered in a loop with alternating logic.
-                </p>
+  <div class="dd-section__content">
+    <div class="dd-section__items dd-g">
+      <div class="dd-section__item dd-u0-1">
+        <h2>Overview</h2>
+        <p>
+          The dd-alternating component provides a layout for alternating content blocks, typically featuring an image on one side and text on the other, which switches sides for each subsequent item. This creates a visually engaging zigzag pattern, ideal for showcasing features, benefits, or narrative sections.
+        </p>
+        <p>
+          This component is great for pages like "About Us," product features, or case studies. In WordPress, configure it via ACF repeater fields for alternating items (e.g., image, title, body, links). In Drupal, use a Paragraph type with fields for image and copy, rendered in a loop with alternating logic.
+        </p>
+        <h2>Basic Usage</h2>
+        <p>
+          Wrap items in a container with class <em>dd-alternating</em> and <em>role="region"</em> for accessibility. Each item contains a grid with image and copy columns that stack on mobile and side-by-side on larger screens. Use AOS attributes for fade animations.
+        </p>
 
-                <h2>Basic Usage</h2>
-                <p>
-                    Wrap items in a container with class <em>dd-alternating</em> and <em>role="region"</em> for accessibility. Each item contains a grid with image and copy columns that stack on mobile and side-by-side on larger screens. Use AOS attributes for fade animations.
-                </p>
-
+<div class="dd-tabs" data-id="001">
+  <div class="dd-tabs__content dd-g">
+    <ul class="dd-tabs__menu dd-g">
+      <li class="dd-tabs__menu-item">
+        <a href="#tab-001" class="dd-tabs__menu-link -active" id="tab-001" aria-selected="true" aria-controls="tabpanel-001">Code</a>
+      </li>
+      <li class="dd-tabs__menu-item">
+        <a href="#tab-002" class="dd-tabs__menu-link" id="tab-002" aria-selected="false" aria-controls="tabpanel-002">Preview</a>
+      </li>
+    </ul>
+    <div class="dd-tabs__items dd-g">
+      <div class="dd-tabs__item dd-u-1-1 -active" id="tabpanel-001" aria-hidden="false" aria-labelledby="tab-001">
 <pre>
 <code>
 <div class="dd-alternating" role="region">
     <div class="dd-alternating__items dd-g">
+      <div class="dd-alternating__item dd-u-1-1">
+            <div class="dd-alternating__content dd-g">
+                <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
+                    <img src="https://dummyimage.com/600x400/000/fff" class="dd-img" alt="" />
+                </div>
+                <div class="dd-alternating__copy l-box dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
+                    <div class="dd-alternating__title">
+                        <h2>Alternating title</h2>
+                    </div>
+                    <div class="dd-alternating__body">
+                        <p>Alternating body copy</p>
+                        <div class="dd-alternating__links">
+                            <div class="dd-alternating__link">
+                                <a href="#" class="dd-button -primary">Alternating Link 1</a>
+                            </div>
+                            <div class="dd-alternating__link">
+                                <a href="#" class="dd-button -ghost">Alternating Link 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="dd-alternating__item dd-u-1-1">
             <div class="dd-alternating__content dd-g">
                 <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
@@ -33,10 +67,10 @@
                         <p>Alternating body copy</p>
                         <div class="dd-alternating__links">
                             <div class="dd-alternating__link">
-                                <a href="#" class="dd-button">Alternating Link 1</a>
+                                <a href="#" class="dd-button -primary">Alternating Link 1</a>
                             </div>
                             <div class="dd-alternating__link">
-                                <a href="#" class="dd-button">Alternating Link 2</a>
+                                <a href="#" class="dd-button -ghost">Alternating Link 2</a>
                             </div>
                         </div>
                     </div>
@@ -47,97 +81,51 @@
 </div>
 </code>
 </pre>
-                <p>
-                    The framework uses CSS <em>:nth-child(odd/even)</em> to alternate image/copy positions automatically.
-                </p>
+      </div>
+      <div class="dd-tabs__item dd-u-1-1" id="tabpanel-002" aria-hidden="false" aria-labelledby="tab-002">
+<div id="preview_code"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                <h2>CSS Modifiers (from _dd_alternating.scss)</h2>
-                <p>
-                    The SCSS file defines base styles for the alternating layout, including responsive grid, spacing, and integration with AOS for animations. Key modifiers include:
-                </p>
-                <ul>
-                    <li>
-                        <em>-reverse</em>: Reverses the default alternating direction (e.g., starts with copy on left).
-                    </li>
-                    <li>
-                        <em>-no-alternate</em>: Disables alternating, keeping all items in the same order (image left, copy right).
-                    </li>
-                    <li>
-                        Utility classes for alignment. <em> -x-center -y-center </em>
-                    </li>
-                    <li>
-                        AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
-                    </li>
-                </ul>
-                <p>
-                    For ACF/Paragraphs integration, use repeater sub-fields to generate items dynamically, with optional fields for custom modifiers.
-                </p>
+              <p>
+                The framework uses CSS <em>:nth-child(odd/even)</em> to alternate image/copy positions automatically.
+              </p>
 
-                <h2>Framework files</h2>
-                <ul>
-                  <li>source/js/vendors/aos.js (animations)</li>
-                  <li>source/scss/components/_dd_alternating.scss (styles)</li>
-                </ul>
+              <h2>CSS Modifiers (from _dd_alternating.scss)</h2>
+              <p>
+                The SCSS file defines base styles for the alternating layout, including responsive grid, spacing, and integration with AOS for animations. Key modifiers include:
+              </p>
+              <ul>
+                <li>
+                  <em>-reverse</em>: Reverses the default alternating direction (e.g., starts with copy on left).
+                </li>
+                <li>
+                  <em>-no-alternate</em>: Disables alternating, keeping all items in the same order (image left, copy right).
+                </li>
+                <li>
+                  Utility classes for alignment. <em> -x-center -y-center </em>
+                </li>
+                <li>
+                  AOS data attributes for custom animations. <em>data-aos="fade-up"</em>
+                </li>
+              </ul>
+              <p>
+                For ACF/Paragraphs integration, use repeater sub-fields to generate items dynamically, with optional fields for custom modifiers.
+              </p>
 
-                <h2>Accessibility and Best Practices</h2>
-                <p>
-                    Use descriptive alt text for images. Ensure copy uses semantic headings. The <em>role="region"</em> helps screen readers identify the section. Test keyboard navigation and color contrast. In CMS, validate image uploads for alt text requirements.
-                </p>
+              <h2>Framework files</h2>
+              <ul>
+                <li>source/js/vendors/aos.js (animations)</li>
+                <li>source/scss/components/_dd_alternating.scss (styles)</li>
+              </ul>
+
+              <h2>Accessibility and Best Practices</h2>
+              <p>
+                Use descriptive alt text for images. Ensure copy uses semantic headings. The <em>role="region"</em> helps screen readers identify the section. Test keyboard navigation and color contrast. In CMS, validate image uploads for alt text requirements.
+              </p>
             </div>
-
-            <div class="dd-alternating" role="region">
-                <div class="dd-alternating__items dd-g">
-
-                  <div class="dd-alternating__item dd-u-1-1">
-                        <div class="dd-alternating__content dd-g">
-                            <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
-                                <img src="https://dummyimage.com/600x400/000/fff" class="dd-img" alt="" />
-                            </div>
-                            <div class="dd-alternating__copy l-box dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
-                                <div class="dd-alternating__title">
-                                    <h2>Alternating title</h2>
-                                </div>
-                                <div class="dd-alternating__body">
-                                    <p>Alternating body copy</p>
-                                    <div class="dd-alternating__links">
-                                        <div class="dd-alternating__link">
-                                            <a href="#" class="dd-button">Alternating Link 1</a>
-                                        </div>
-                                        <div class="dd-alternating__link">
-                                            <a href="#" class="dd-button -ghost">Alternating Link 2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dd-alternating__item dd-u-1-1">
-                        <div class="dd-alternating__content dd-g">
-                            <div class="dd-alternating__image dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
-                                <img src="https://dummyimage.com/600x400/000/fff" class="dd-img" alt="" />
-                            </div>
-                            <div class="dd-alternating__copy l-box dd-u-1-1 dd-u-sm-1-1 dd-u-md-1-1 dd-u-lg-12-24" data-aos="fade-up">
-                                <div class="dd-alternating__title">
-                                    <h2>Alternating title</h2>
-                                </div>
-                                <div class="dd-alternating__body">
-                                    <p>Alternating body copy</p>
-                                    <div class="dd-alternating__links">
-                                        <div class="dd-alternating__link">
-                                            <a href="#" class="dd-button">Alternating Link 1</a>
-                                        </div>
-                                        <div class="dd-alternating__link">
-                                            <a href="#" class="dd-button -ghost">Alternating Link 2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>

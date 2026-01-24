@@ -57,6 +57,7 @@ cite {
 
 code {
   border: solid 1px variables.$c_ui_neutral_300;
+  box-sizing: border-box;
   border-left: solid 5px variables.$c_ui_neutral_300;
   @include mixins.pref_dark {
     border: solid 1px variables.$c_ui_neutral_300--dark;
@@ -65,7 +66,11 @@ code {
   display: block;
   margin-bottom: 20px;
   padding: 8px;
-  overflow-x: scroll;
+  word-wrap: break-word;
+  width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  position: relative;
 }
 
 data {

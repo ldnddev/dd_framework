@@ -9,7 +9,20 @@
 
         <h2>Basic Usage</h2>
         <p>Use buttons with <em>data-modal-open</em> and <em>data-id</em> attributes to open modals. The modal itself uses dialog with <em>data-modal</em> and a matching <em>id</em>. Include a close button with <em>data-modal-close</em> and <em>data-id</em> inside the modal.</p>
-        <pre>
+
+<div class="dd-tabs" data-id="001">
+  <div class="dd-tabs__content dd-g">
+    <ul class="dd-tabs__menu dd-g">
+      <li class="dd-tabs__menu-item">
+        <a href="#tab-001" class="dd-tabs__menu-link -active" id="tab-001" aria-selected="true" aria-controls="tabpanel-001">Code</a>
+      </li>
+      <li class="dd-tabs__menu-item">
+        <a href="#tab-002" class="dd-tabs__menu-link" id="tab-002" aria-selected="false" aria-controls="tabpanel-002">Preview</a>
+      </li>
+    </ul>
+    <div class="dd-tabs__items dd-g">
+      <div class="dd-tabs__item dd-u-1-1 -active" id="tabpanel-001" aria-hidden="false" aria-labelledby="tab-001">
+<pre>
 <code>
 <button data-modal-open data-id="example-modal">Open Modal</button>
 
@@ -21,43 +34,29 @@
 </dialog>
 </code>
 </pre>
+      </div>
+      <div class="dd-tabs__item dd-u-1-1" id="tabpanel-002" aria-hidden="false" aria-labelledby="tab-002">
+<div id="preview_code"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
         <h2>CSS Modifiers</h2>
         <p>Base styles for the modal include backdrop blur, centering, and responsive sizing.</p>
         <ul>
           <li><em>[open]</em>: Applied when the dialog is open, for styling the backdrop and modal.</li>
         </ul>
-
-                <h2>Framework files</h2>
-                <ul>
-                  <li>source/js/_dd_modal.js (animations)</li>
-                  <li>source/scss/components/_dd_modal.scss (styles)</li>
-                </ul>
-
+        <h2>Framework files</h2>
+        <ul>
+          <li>source/js/_dd_modal.js (animations)</li>
+          <li>source/scss/components/_dd_modal.scss (styles)</li>
+        </ul>
         <h2>Accessibility and Best Practices</h2>
         <p>
           The dialog element provides automatic focus management and keyboard navigation (ESC to close). Ensure close buttons have proper
           <em>aria-label</em>. Test with screen readers. In CMS, ensure modal content is meaningful and avoid nesting interactive elements.
         </p>
-      </div>
-    </div>
-    <div class="dd-section__items dd-g">
-      <div class="dd-section__item dd-u-1-1 l-box">
-        <button data-modal-open data-id="dd-modal-001">Open Modal 1</button>
-        <dialog id="dd-modal-001" data-modal class="dd-modal">
-          <button data-modal-close data-id="dd-modal-001" aria-label="close modal window">X</button>
-          <div class="dd-modal__content">
-            <p>This content will show in the open modal window 1.</p>
-          </div>
-        </dialog>
-
-        <button data-modal-open data-id="dd-modal-002">Open Modal 2</button>
-        <dialog id="dd-modal-002" data-modal class="dd-modal">
-          <button data-modal-close data-id="dd-modal-002" aria-label="close modal window">X</button>
-          <div class="dd-modal__content">
-            <p>This content will show in the open modal window 2.</p>
-          </div>
-        </dialog>
       </div>
     </div>
   </div>

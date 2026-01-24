@@ -19,6 +19,20 @@
                 <p>
                     Add spacers (e.g., <em>div class="dd-spacer -xl"</em>) between items for visual separation if needed.
                 </p>
+
+<div class="dd-tabs" data-id="001">
+  <div class="dd-tabs__content dd-g">
+    <ul class="dd-tabs__menu dd-g">
+      <li class="dd-tabs__menu-item">
+        <a href="#tab-001" class="dd-tabs__menu-link -active" id="tab-001" aria-selected="true" aria-controls="tabpanel-001">Code</a>
+      </li>
+      <li class="dd-tabs__menu-item">
+        <a href="#tab-002" class="dd-tabs__menu-link" id="tab-002" aria-selected="false" aria-controls="tabpanel-002">Preview</a>
+      </li>
+    </ul>
+    <div class="dd-tabs__items dd-g">
+      <div class="dd-tabs__item dd-u-1-1 -active" id="tabpanel-001" aria-hidden="false" aria-labelledby="tab-001">
+
 <pre>
 <code>
 <div class="dd-accordion">
@@ -35,11 +49,6 @@
                 </p>
             </div>
         </details>
-    </div>
-</div>
-<div class="dd-spacer -xl"></div>
-<div class="dd-accordion">
-    <div class="dd-accordion__items">
         <details name="group1" class="dd-accordion__item">
             <summary class="dd-accordion__header dd-g -y-center">
                 <div class="dd-accordion__title dd-u-1-1">
@@ -56,6 +65,14 @@
 </div>
 </code>
 </pre>
+
+      </div>
+      <div class="dd-tabs__item dd-u-1-1" id="tabpanel-002" aria-hidden="false" aria-labelledby="tab-002">
+<div id="preview_code"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
                 <h2>CSS Modifiers (from _dd_accordion.scss)</h2>
                 <p>
@@ -102,73 +119,6 @@
                 <p>
                     Ensure headers are focusable and keyboard-navigable. Use semantic headings in titles if appropriate. Test with screen readers. In CMS, make fields required for titles to avoid empty summaries.
                 </p>
-            </div>
-        </div>
-        <div class="dd-section__items dd-g">
-            <div class="dd-section__item dd-u-1-1 l-box">
-                <div class="dd-accordion">
-                    <div class="dd-accordion__items">
-                        <details name="group1" class="dd-accordion__item">
-                            <summary class="dd-accordion__header dd-g -y-center">
-                                <div class="dd-accordion__title dd-u-1-1">
-                                    Header Name
-                                </div>
-                            </summary>
-                            <div class="dd-accordion__copy">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            </div>
-                        </details>
-
-                        <div class="dd-spacer -xl"></div>
-
-                        <details name="group1" class="dd-accordion__item">
-                            <summary class="dd-accordion__header dd-g -y-center">
-                                <div class="dd-accordion__title dd-u-1-1">
-                                    Header Name
-                                </div>
-                            </summary>
-                            <div class="dd-accordion__copy">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            </div>
-                        </details>
-
-                        <div class="dd-spacer -xl"></div>
-
-                        <details name="group1" class="dd-accordion__item">
-                            <summary class="dd-accordion__header dd-g -y-center">
-                                <div class="dd-accordion__title dd-u-1-1">
-                                    Header Name
-                                </div>
-                            </summary>
-                            <div class="dd-accordion__copy">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            </div>
-                        </details>
-
-                        <div class="dd-spacer -xl"></div>
-
-                        <details name="group1" class="dd-accordion__item">
-                            <summary class="dd-accordion__header dd-g -y-center">
-                                <div class="dd-accordion__title dd-u-1-1">
-                                    Header Name
-                                </div>
-                            </summary>
-                            <div class="dd-accordion__copy">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            </div>
-                        </details>
-
-                        <div class="dd-spacer -xl"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
