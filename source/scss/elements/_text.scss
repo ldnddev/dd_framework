@@ -62,7 +62,11 @@ p {
 }
 
 pre {
-  // todo
+  word-wrap: break-word;
+  width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  box-sizing: border-box;
 }
 
 ul {

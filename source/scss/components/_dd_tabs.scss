@@ -8,6 +8,7 @@
   }
   &__menu {
     flex-direction: row;
+    list-style: none;
     gap: 8px;
     padding: 0;
     width: 100%;
@@ -24,7 +25,7 @@
     }
   }
   &__items {
-    //todo
+    width: 100%;
   }
   &__item {
     @include mixins.opacity(0);

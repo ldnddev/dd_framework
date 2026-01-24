@@ -7,31 +7,41 @@
     @include mixins.position_relative();
   }
   &__item {
-    overflow: hidden;
-    &.-animate {
-      @include mixins.opacity(0);
-    }
-    &.-is-visible {
-      @include mixins.slide_up_bottom;
-    }
+    //todo
   }
   &__body {
-    @include mixins.box_shadow();
+    display: flex;
+    flex-direction: column;
+    border: solid 1px variables.$c_ui_neutral_900;
+    @include mixins.pref_dark {
+      border: solid 1px variables.$c_ui_neutral_900--dark;
+    }
   }
   &__percentage {
     @include mixins.font_size(32px);
   }
-  &__subtitle {
-    //todo
-  }
   &__title {
     @include mixins.font_headline();
     @include mixins.font_size(18px);
+  }
+  &__subtitle {
+    //todo
   }
   &__copy {
     //todo
   }
   &__link {
     //todo
+  }
+  &.-horizontal {
+    & .dd-milestones__body {
+      flex-direction: row;
+      gap: 1rem;
+    }
+    & .dd-milestones__title {
+      & h2 {
+        margin-top: 0;
+      }
+    }
   }
 }
