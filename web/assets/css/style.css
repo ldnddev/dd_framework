@@ -27600,8 +27600,13 @@ ul.-nostyle li::marker {
   height: auto;
 }
 .dd-card.-horizontal .dd-card__body {
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
+}
+@media only screen and (min-width: 48em) {
+  .dd-card.-horizontal .dd-card__body {
+    flex-direction: row;
+  }
 }
 .dd-card.-horizontal .dd-card__image img {
   height: 100%;
