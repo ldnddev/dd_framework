@@ -1,10 +1,20 @@
-<h1>Header</h1>
+<h1>Filmstrip Component Breakdown</h1>
 <div class="dd-section">
   <div class="dd-section__content">
     <div class="dd-section__items dd-g">
       <div class="dd-section__item dd-u-1-1">
         <h2>Overview</h2>
-        <p>This header supports multi-level navigation menus for desktop and mobile.</p>
+        <p>
+          The dd-filmstrip component provides a marque like section that has an infinite scroll with a pause effect on hover.
+        </p>
+        <p>
+          This component is ideal for showing logos or small thumbnail images that continually scroll.
+        </p>
+        <h2>Basic Usage</h2>
+        <p>
+          Wrap the Filmstrip in a div with class <em>dd-filmstrip</em>. Use an unordered list to show images.
+        </p>
+
         <div class="dd-tabs" data-id="001">
           <div class="dd-tabs__content dd-g">
             <ul class="dd-tabs__menu dd-g">
@@ -16,7 +26,7 @@
                   aria-selected="true"
                   aria-controls="tabpanel-001"
                   hx-trigger="click"
-                  hx-get="/templates/layouts/dd-header.html"
+                  hx-get="/components/dd-filmstrip.html"
                   hx-target="#view_code"
                   >Code</a
                 >
@@ -29,7 +39,7 @@
                   aria-selected="false"
                   aria-controls="tabpanel-002"
                   hx-trigger="click"
-                  hx-get="/templates/layouts/dd-header.html"
+                  hx-get="/components/dd-filmstrip.html"
                   hx-target="#preview_code"
                   >Preview</a
                 >
@@ -43,8 +53,8 @@
                 aria-labelledby="tab-001"
               >
                 <pre>
-                <code id="view_code">
-                </code>
+                  <code id="view_code">
+                  </code>
                 </pre>
               </div>
               <div
@@ -59,14 +69,31 @@
           </div>
         </div>
 
+        <p>
+          Use responsive image for mobile.
+        </p>
+        <h2>CSS Modifiers (from _dd_filmstrip.scss)</h2>
+        <p>
+          The SCSS file defines base styles for the Filmstrip, animation direction. Key modifiers for
+          .dd-filmstrip include:
+        </p>
+        <ul>
+          <li><em>-reverset</em>: reverse the play head.</li>
+        </ul>
         <h2>Framework files</h2>
         <ul>
-          <li>source/js/components/_dd_navigation.js</li>
-          <li>source/js/components/_dd_search.js</li>
-          <li>source/scss/components/_dd_header.scss (styles)</li>
-          <li>source/scss/components/_dd_navigation.scss (styles)</li>
-          <li>source/scss/components/_dd_search.scss (styles)</li>
+          <li>source/scss/components/_dd_filmstrip.scss (styles)</li>
         </ul>
+        <p>
+          For ACF/Paragraphs integration, map fields to generate inline styles
+          and classes dynamically.
+        </p>
+        <h2>Accessibility and Best Practices</h2>
+        <p>
+          Ensure overlay text contrasts with background (use borders/opacity).
+          Provide alt text for images if visible. In CMS, validate background images for
+          required fields and enforce contrast checks if possible.
+        </p>
       </div>
     </div>
   </div>

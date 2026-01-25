@@ -6,7 +6,7 @@ function escape_code_block() {
   document.querySelectorAll('code').forEach(codeBlock => {
     // Skip if already processed (prevents double-wrapping)
     if (codeBlock.dataset.enhanced) return;
-    codeBlock.dataset.enhanced = 'true';
+    //codeBlock.dataset.enhanced = 'true';
 
     // Get the original raw content (before we escape it)
     const originalContent = codeBlock.innerHTML;
@@ -48,15 +48,6 @@ function escape_code_block() {
 
     // Replace content with escaped version
     codeBlock.innerHTML = escaped;
-
-    // Add raw code back to preview div
-    // Skip if already processed (prevents double-wrapping)
-    const previewDiv = document.getElementById('preview_code');
-    if (previewDiv.dataset.enhanced) return;
-    previewDiv.dataset.enhanced = 'true';
-    if (previewDiv) {
-      previewDiv.innerHTML = originalContent;
-    }
 
     // Add copy button to code block
     codeBlock.appendChild(copyBtn);

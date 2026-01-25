@@ -193,9 +193,11 @@ input[type="color"] {
 }
 input[type="submit"] {
   border-color: variables.$c_green;
+  color: variables.$c_green;
 }
 input[type="reset"] {
   border-color: variables.$c_red;
+  color: variables.$c_red;
 }
 
 input[type="text"]:focus,

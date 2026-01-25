@@ -42,8 +42,11 @@
   }
   &.-horizontal {
     & .dd-card__body {
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: nowrap;
+      @include mixins.mq(md) {
+        flex-direction: row;
+      }
     }
     & .dd-card__image {
       & img {
