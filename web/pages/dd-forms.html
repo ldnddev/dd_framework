@@ -3,109 +3,68 @@
   <div class="dd-section__content -contained">
     <div class="dd-section__items dd-g">
       <div class="dd-section__item dd-u-1-1 l-box">
-
-<div class="section">
-  <div class="section__content">
-    <div class="section__items dd-g">
-      <div class="section__item dd-u-12-24">
-        <label for="input__text">Form text</label>
-        <input id="input__text" type="text" placeholder="text" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__password">Form password</label>
-        <input id="input__password" type="password" placeholder="password" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__email">Form email</label>
-        <input id="input__email" type="email" placeholder="email" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__url">Form url</label>
-        <input id="input__url" type="url" placeholder="url" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__date">Form date</label>
-        <input id="input__date" type="date" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__month">Form month</label>
-        <input id="input__month" type="month" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__time">Form time</label>
-        <input id="input__time" type="time" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__datetime-local">Form datetime-local</label>
-        <input id="input__datetime-local" type="datetime-local" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__week">Form week</label>
-        <input id="input__week" type="week" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__number">Form number</label>
-        <input id="input__number" type="number" min="1" max="10" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__tel">Form tel</label>
-        <input id="input__tel" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" minlength="9" maxlength="14" placeholder="555-555-5555" />
-        <p>Other examples:</p>
-        <div>
-          <input id="input__tel--areacode" type="tel" pattern="[0-9]{3}" minlength="3" maxlength="3" placeholder="555" />
-          -
-          <input id="input__tel--first" type="tel" pattern="[0-9]{3}" minlength="3" maxlength="3" placeholder="555" />
-          -
-          <input id="input__tel--second" type="tel" pattern="[0-9]{4}" minlength="4" maxlength="4" placeholder="5555" />
+        <h2>Overview</h2>
+        <p>The following shows all form elements with their default styles.</p>
+        <div class="dd-tabs" data-id="001">
+          <div class="dd-tabs__content dd-g">
+            <ul class="dd-tabs__menu dd-g">
+              <li class="dd-tabs__menu-item">
+                <a
+                  href="#tab-001"
+                  class="dd-tabs__menu-link -active"
+                  id="tab-001"
+                  aria-selected="true"
+                  aria-controls="tabpanel-001"
+                  hx-trigger="click"
+                  hx-get="/templates/elements/dd-forms.html"
+                  hx-target="#view_code"
+                  >Code</a
+                >
+              </li>
+              <li class="dd-tabs__menu-item">
+                <a
+                  href="#tab-002"
+                  class="dd-tabs__menu-link"
+                  id="tab-002"
+                  aria-selected="false"
+                  aria-controls="tabpanel-002"
+                  hx-trigger="click"
+                  hx-get="/templates/elements/dd-forms.html"
+                  hx-target="#preview_code"
+                  >Preview</a
+                >
+              </li>
+            </ul>
+            <div class="dd-tabs__items dd-g">
+              <div
+                class="dd-tabs__item dd-u-1-1 -active"
+                id="tabpanel-001"
+                aria-hidden="false"
+                aria-labelledby="tab-001"
+              >
+                <pre>
+                <code id="view_code">
+                </code>
+                </pre>
+              </div>
+              <div
+                class="dd-tabs__item dd-u-1-1"
+                id="tabpanel-002"
+                aria-hidden="false"
+                aria-labelledby="tab-002"
+              >
+                <div id="preview_code"></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__file">Form file</label>
-        <input id="input__file" type="file" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__disabled">Input Disabled</label>
-        <input id="input__disabled" type="text" value="Disabled" disabled />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__readonly">Input Readonly</label>
-        <input id="input__readonly" type="text" value="Read Only" readonly />
+
+        <h2>Framework files</h2>
+        <ul>
+          <li>source/scss/elements/_forms.scss (styles)</li>
+        </ul>
       </div>
 
-      <div class="section__item dd-u-12-24">
-        <label for="input__radio">Form radio</label>
-        <input id="input__radio" type="radio" />
-      </div>
-      <div class="section__item dd-u-12-24">
-        <label for="input__checkbox">Form checkbox</label>
-        <input id="input__checkbox" type="checkbox" />
-      </div>
-
-      <div class="section__item dd-u-12-24">
-        <label for="input__color">Form color</label>
-        <input id="input__color" type="color" />
-      </div>
-
-
-      <div class="section__item dd-u-12-24">
-        <label for="input__button">Form button</label>
-        <input id="input__button" type="button" value="Button" />
-      </div>
-      <div class="section__item dd-u-12-24">
-      <label for="input__submit">Form submit</label>
-        <input id="input__submit" type="submit" value="Submit" />
-      </div>
-      <div class="section__item dd-u-12-24">
-      <label for="input__reset">Form reset</label>
-        <input id="input__reset" type="reset" value="Reset" />
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-      </div>
     </div>
   </div>
 </div>
