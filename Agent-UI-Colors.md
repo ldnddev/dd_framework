@@ -1,4 +1,6 @@
-# Framework colors - Quick WCAG contrast notes (using your text colors)
+# Framework templates
+
+## Framework colors - Quick WCAG contrast notes (using your text colors)
 The following is a guide on how to use colors for proper WCAG contrast in the `source/scss/* files.
 
 ## Primary base colors
@@ -67,7 +69,7 @@ The following is a guide on how to use colors for proper WCAG contrast in the `s
 - Disabled → light gray text on dark muted bg → ~7–10:1 (very readable)  
 
 **General tips**  
-- Primary (blue) for main CTAs — highest visibility  
-- Secondary (peach) for alternate/prominent actions  
-- Tertiary (coral) for destructive/attention-grabbing (e.g., delete, warning) or tertiary choices  
+- Primary for main CTAs — highest visibility  
+- Secondary for alternate/prominent actions  
+- Tertiary for destructive/attention-grabbing (e.g., delete, warning) or tertiary choices  
 - Always pair with your existing $c_text_ variables for non-CTA text on surfaces
