@@ -1,4 +1,4 @@
-<a href="https://framework.ldnddev.com" target="_blank"><img src="https://imgur.com/a/SXk5ofJ" width="75px" /></a>
+<a href="https://framework.ldnddev.com" target="_blank"><img src="https://i.imgur.com/PQ9ljGe.png" width="75px" /></a>
 # ldnddev Framework
 
 ### Project Description
