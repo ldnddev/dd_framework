@@ -4,12 +4,12 @@
 # REQUIREMENTS: Lando 3.0.0-RC.2+ - Tested on 3.0.0-RC.17
 # Replace PROJECTNAME
 
-name: ddframework
+name: frameworkldnddev
 recipe: lamp
 
 proxy:
   appserver:
-    - ddframework.lndo.site
+    - frameworkldnddev.lndo.site
   #pma:
   #  - phpmyadmin.lndo.site
   #mailhog:
@@ -51,9 +51,9 @@ services:
 #  database:
 #    type: mysql
 #    creds:
-#      user: ddframework
-#      password: ddframework
-#      database: ddframework
+#      user: frameworkldnddev
+#      password: frameworkldnddev
+#      database: frameworkldnddev
 
 #  pma:
 #    type: phpmyadmin
