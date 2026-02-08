@@ -26,28 +26,29 @@
 
         <div class="dd-tabs" data-id="001">
           <div class="dd-tabs__content dd-g">
-            <ul class="dd-tabs__menu dd-g">
-              <li class="dd-tabs__menu-item">
+            <ul class="dd-tabs__menu dd-g" role="tablist">
+              <li class="dd-tabs__menu-item" role="presentation">
                 <a
                   href="#tab-001"
                   class="dd-tabs__menu-link -active"
                   id="tab-001"
                   aria-selected="true"
                   aria-controls="tabpanel-001"
-                  hx-trigger="click"
+                  hx-trigger="click once"
                   hx-get="/templates/components/dd-alert.html"
+                  hx-on::after-request="escape_code_block()"
                   hx-target="#view_code"
                   >Code</a
                 >
               </li>
-              <li class="dd-tabs__menu-item">
+              <li class="dd-tabs__menu-item" role="presentation">
                 <a
                   href="#tab-002"
                   class="dd-tabs__menu-link"
                   id="tab-002"
                   aria-selected="false"
                   aria-controls="tabpanel-002"
-                  hx-trigger="click"
+                  hx-trigger="click once"
                   hx-get="/templates/components/dd-alert.html"
                   hx-target="#preview_code"
                   >Preview</a
@@ -58,6 +59,7 @@
               <div
                 class="dd-tabs__item dd-u-1-1 -active"
                 id="tabpanel-001"
+                role="tabpanel"
                 aria-hidden="false"
                 aria-labelledby="tab-001"
               >
@@ -69,6 +71,7 @@
               <div
                 class="dd-tabs__item dd-u-1-1"
                 id="tabpanel-002"
+                role="tabpanel"
                 aria-hidden="false"
                 aria-labelledby="tab-002"
               >

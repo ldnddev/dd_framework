@@ -201,7 +201,7 @@ module.exports = (grunt) => {
           browser: "google chrome",
           watchTask: true,
           proxy: {
-            target: "https://ddframework.lndo.site/",
+            target: "https://frameworkldnddev.lndo.site/",
           }
         }
       }

@@ -62,14 +62,14 @@ function escapeHtml(str) {
 
 // Create the dashboard
 function createAccessibilityDashboard(jsonData) {
-  const nineaxe = document.createElement("div");
-  nineaxe.className = "dd-axe";
-  nineaxe.setAttribute("role", "complementary");
-  nineaxe.innerHTML = `
+  const ddaxe = document.createElement("div");
+  ddaxe.className = "dd-axe";
+  ddaxe.setAttribute("role", "complementary");
+  ddaxe.innerHTML = `
       <div class="dd-axe__open-close dd-g -x-center -y-center"><i></i></div>
       <div class="dd-axe__content"><!-- dd-axe.js populates data here --></div>
   `;
-  document.body.appendChild(nineaxe);
+  document.body.appendChild(ddaxe);
 
   const dashboardContainer = document.querySelector(".dd-axe__content");
   if (!dashboardContainer) {
@@ -183,7 +183,7 @@ function createAccessibilityDashboard(jsonData) {
                 <div class="dd-alert__sub-heading">
                   ${node.impact || "unknown"}
                 </div>
-              <div class="dd-alert__heading h2">
+              <div class="dd-alert__heading">
                   ${violation.description}
                 </div>
                 <div class="dd-alert__text">
@@ -212,12 +212,12 @@ function createAccessibilityDashboard(jsonData) {
   dashboardContainer.appendChild(violationsSection);
 
   // Open and close the dashboard : AI!
-  nineaxe.classList.add('-close'); // Start closed
-  nineaxe.addEventListener('click', (event) => {
+  ddaxe.classList.add('-close'); // Start closed
+  ddaxe.addEventListener('click', (event) => {
     // Check if the clicked element matches '.dd-axe__open-close'
     if (event.target.closest('.dd-axe__open-close')) {
       // Toggle class '-close' on the dashboard element
-      nineaxe.classList.toggle('-close');
+      ddaxe.classList.toggle('-close');
     }
   });
 }
