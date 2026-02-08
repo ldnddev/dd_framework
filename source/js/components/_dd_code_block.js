@@ -51,15 +51,3 @@ function escape_code_block() {
     codeBlock.appendChild(copyBtn);
   });
 }
-
-// Fire axe after HTMX settles
-if (!window.escapeCodeBlockListenerAdded) {
-  document.addEventListener('DOMContentLoaded', () => {
-    //escape_code_block();
-  });
-
-  document.body.addEventListener("htmx:afterSettle", function (event) {
-    escape_code_block();
-  });
-  window.escapeCodeBlockListenerAdded = true;
-}

@@ -54,18 +54,6 @@ function escape_code_block() {
   });
 }
 
-// Fire axe after HTMX settles
-if (!window.escapeCodeBlockListenerAdded) {
-  document.addEventListener('DOMContentLoaded', () => {
-    //escape_code_block();
-  });
-
-  document.body.addEventListener("htmx:afterSettle", function (event) {
-    escape_code_block();
-  });
-  window.escapeCodeBlockListenerAdded = true;
-}
-
 function dd_is_visible() {
   const animate_observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -289,84 +277,76 @@ document.addEventListener('DOMContentLoaded', () => {
   dd_search();
 });
 
-// init responsive slides
-function dd_slider_responsive_slider(element){
-  // Slideshow 1
-  jQuery(element).responsiveSlides({
-    auto: false,
-    speed: 0,            // Integer: Speed of the transition, in milliseconds
-    timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
-    pager: true,           // Boolean: Show pager, true or false
-    nav: true,             // Boolean: Show navigation, true or false
-    random: false,          // Boolean: Randomize the order of the slides, true or false
-    pause: true,           // Boolean: Pause on hover, true or false
-    pauseControls: true,    // Boolean: Pause when hovering controls, true or false
-    prevText: "",   // String: Text for the "previous" button
-    nextText: "",       // String: Text for the "next" button
-    maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
-    navContainer: ".dd-slider__navigation", // Selector: Where controls should be appended to, default is after the 'ul'
-    manualControls: "",     // Selector: Declare custom pager navigation
-    namespace: "dd-slider", // String: Change the default namespace used
-    before: function() {},   // Function: Before callback
-    after: function() {}     // Function: After callback
-  });
-  dd_slider_responsive_slider_swipe(element);
-
-}
-
-function dd_slider_responsive_slider_swipe(element) {
-  jQuery(element).swipe( {
-    swipeLeft: function(){
-        jQuery(".dd-slider__nav.next").click();
-    },
-    swipeRight: function(){
-        jQuery(".dd-slider__nav.prev").click();
-    }
-  });
-}
-
-function dd_slider_slick(element) {
-  jQuery(element).slick();
-
-  var useScroll = jQuery(element).data('slick-on-scroll');
-  if(useScroll) {
-    dd_slider_scroll_enabled(element);
-  }
-
-  var useNav = jQuery(element).data('slick-use-navigation');
-  if(useNav) {
-    //slick_prev
-    //slick_next
-    var elId = jQuery(element).attr('id');
-    //unique-number__668c171e210ba
-    jQuery('#' + elId + ' .slick_prev').click(function(){
-      jQuery(element).slick('slickPrev');
-    })
-
-    jQuery('#' + elId + ' .slick_next').click(function(){
-      jQuery(element).slick('slickNext');
-    })
-  }
-}
-
 function dd_slider() {
-  // set responsiveslider in motion
-  if (jQuery('body').find('.dd-slider.-responsiveslides')) {
+  const slides = document.querySelectorAll('.dd-slider__item');
+  const prevBtn = document.getElementById('dd-slider__previous');
+  const nextBtn = document.getElementById('dd-slider__next');
+  const tabsContainer = document.querySelector('.dd-slider__tabs');
+  let currentSlide = 0;
 
-    jQuery('.dd-slider.-responsiveslides').each(function () {
-      dd_slider_responsive_slider(jQuery(this).children('.dd-slider__items'));
+  function createTabs() {
+    tabsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+      const li = document.createElement('li');
+      const button = document.createElement('button');
+      button.textContent = i + 1;
+      button.addEventListener('click', () => {
+        currentSlide = i;
+        showSlide(currentSlide);
+      });
+      li.appendChild(button);
+      tabsContainer.appendChild(li);
     });
   }
 
-  // set slick slider in motion
-  if (jQuery('body').find('.dd-slider.-slick')) {
-    jQuery('.dd-slider.-slick').each(function () {
-      dd_slider_slick(jQuery(this).children('.dd-slider__items'));
+  function updateTabs() {
+    const tabListButton = tabsContainer.querySelectorAll('button');
+    tabListButton.forEach((li, i) => {
+      li.classList.toggle('-current', i === currentSlide);
     });
   }
+
+  function showSlide(index) {
+    const position = (0 - index) * 100;
+    slides.forEach((slide, i) => {
+      slide.style.left = `${position}%`;
+      slide.classList.toggle('-current', i === index);
+    });
+    updateTabs();
+  }
+
+  createTabs();
+  updateTabs();
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Event listeners for buttons
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Event listener for keyboard navigation
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+          prevSlide();
+      } else if (e.key === 'ArrowRight') {
+          nextSlide();
+      }
+  });
 }
 // Initialize on initial page load
 document.addEventListener('DOMContentLoaded', () => {
+  dd_slider();
+});
+// Fire axe after HTMX settles
+document.body.addEventListener("htmx:afterSettle", function (event) {
   dd_slider();
 });
 

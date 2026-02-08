@@ -11,35 +11,64 @@
         <p>Use a div with class <em>dd-spacer</em> and a size modifier like <em>-xl</em>. Add <em>-divider</em> for a horizontal line.</p>
         <pre><em>&lt;div class="dd-spacer -xl -divider"&gt;&lt;/div&gt;</em></pre>
         <p>Place it between elements or sections for spacing; it's full-width by default and can be nested in grids or sections.</p>
-<div class="dd-tabs" data-id="001">
-  <div class="dd-tabs__content dd-g">
-    <ul class="dd-tabs__menu dd-g">
-      <li class="dd-tabs__menu-item">
-        <a href="#tab-001" class="dd-tabs__menu-link -active" id="tab-001" aria-selected="true" aria-controls="tabpanel-001">Code</a>
-      </li>
-      <li class="dd-tabs__menu-item">
-        <a href="#tab-002" class="dd-tabs__menu-link" id="tab-002" aria-selected="false" aria-controls="tabpanel-002">Preview</a>
-      </li>
-    </ul>
-    <div class="dd-tabs__items dd-g">
-      <div class="dd-tabs__item dd-u-1-1 -active" id="tabpanel-001" aria-hidden="false" aria-labelledby="tab-001">
-<pre>
-<code>
-<div class="dd-spacer -sm"></div>
-<div class="dd-spacer -md -divider"></div>
-<div class="dd-spacer -lg"></div>
-<div class="dd-spacer -xl"></div>
-<div class="dd-spacer -xxl"></div>
-<div class="dd-spacer -xxxl"></div>
-</code>
-</pre>
-      </div>
-      <div class="dd-tabs__item dd-u-1-1" id="tabpanel-002" aria-hidden="false" aria-labelledby="tab-002">
-<div id="preview_code"></div>
-      </div>
-    </div>
-  </div>
-</div>
+
+        <div class="dd-tabs" data-id="001">
+          <div class="dd-tabs__content dd-g">
+            <ul class="dd-tabs__menu dd-g" role="tablist">
+              <li class="dd-tabs__menu-item" role="presentation">
+                <a
+                  href="#tab-001"
+                  class="dd-tabs__menu-link -active"
+                  id="tab-001"
+                  aria-selected="true"
+                  aria-controls="tabpanel-001"
+                  hx-trigger="click once"
+                  hx-get="/templates/components/dd-spacer.html"
+                  hx-on::after-request="escape_code_block()"
+                  hx-target="#view_code"
+                  >Code</a
+                >
+              </li>
+              <li class="dd-tabs__menu-item" role="presentation">
+                <a
+                  href="#tab-002"
+                  class="dd-tabs__menu-link"
+                  id="tab-002"
+                  aria-selected="false"
+                  aria-controls="tabpanel-002"
+                  hx-trigger="click once"
+                  hx-get="/templates/components/dd-spacer.html"
+                  hx-target="#preview_code"
+                  >Preview</a
+                >
+              </li>
+            </ul>
+            <div class="dd-tabs__items dd-g">
+              <div
+                class="dd-tabs__item dd-u-1-1 -active"
+                id="tabpanel-001"
+                role="tabpanel"
+                aria-hidden="false"
+                aria-labelledby="tab-001"
+              >
+                <pre>
+                  <code id="view_code">
+                  </code>
+                </pre>
+              </div>
+              <div
+                class="dd-tabs__item dd-u-1-1"
+                id="tabpanel-002"
+                role="tabpanel"
+                aria-hidden="false"
+                aria-labelledby="tab-002"
+              >
+                <div id="preview_code"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h2>CSS Modifiers (from _dd_spacer.scss)</h2>
         <p>The SCSS file defines base styles for the spacer as a block element with relative positioning and 100% width. Key modifiers include:</p>
         <ul>
