@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DD Framework is a modular front-end framework designed for building responsive, accessible web components. It uses SCSS for styling, JavaScript for interactivity, and HTML templates for structure. Components are compiled via Grunt and must be wrapped in the `dd-section` component for proper layout and styling.
+The DD Framework is a modular front-end framework designed for building responsive, accessible web components. It uses SCSS for styling, JavaScript for interactivity, and HTML templates for structure. Components are compiled via Grunt and must be wrapped in the `dd-section` component for proper layout and styling. The only component that is exempt from this is `dd-hero`.
 
 This document provides guidelines for AI agents (like myself) to ensure consistent, maintainable code when working with this framework.
 
@@ -45,7 +45,8 @@ Run `grunt` for a full build, or `grunt watch` for development.
 ## Component Creation
 
 ### HTML Structure
-- All components must be wrapped in a `dd-section` element for proper layout
+- All components must be wrapped in a `dd-section` element for proper layout except for `dd-hero`
+- All availible components live in `/web/templates/components/`
 - Use BEM methodology: `.dd-component`, `.dd-component__element`, `.dd-component--modifier`
 - Prefix all custom classes with `dd-`
 - Components go in `web/templates/components/`

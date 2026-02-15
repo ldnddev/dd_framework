@@ -53,7 +53,7 @@ $c_primary_action_default_surface: rgba(136, 217, 247, 1);
 $c_primary_action_default_surface--dark: rgba(90, 180, 245, 1);
 
 $c_primary_action_default_text: rgba(26, 26, 26, 1);
-$c_primary_action_default_text--dark: rgba(255, 255, 255, 1);
+$c_primary_action_default_text--dark: rgba(26, 26, 26, 1);
 
 $c_primary_action_default_border: rgba(86, 160, 220, 1);
 $c_primary_action_default_border--dark: rgba(110, 200, 255, 1);
@@ -62,7 +62,7 @@ $c_primary_action_hover_surface: rgba(100, 190, 240, 1);
 $c_primary_action_hover_surface--dark: rgba(110, 195, 250, 1);
 
 $c_primary_action_hover_text: rgba(26, 26, 26, 1);
-$c_primary_action_hover_text--dark: rgba(255, 255, 255, 1);
+$c_primary_action_hover_text--dark: rgba(26, 26, 26, 1);
 
 $c_primary_action_hover_border: rgba(70, 150, 210, 1);
 $c_primary_action_hover_border--dark: rgba(130, 210, 255, 1);
@@ -71,7 +71,7 @@ $c_primary_action_pressed_surface: rgba(80, 170, 230, 1);
 $c_primary_action_pressed_surface--dark: rgba(70, 160, 230, 1);
 
 $c_primary_action_pressed_text: rgba(26, 26, 26, 1);
-$c_primary_action_pressed_text--dark: rgba(255, 255, 255, 1);
+$c_primary_action_pressed_text--dark: rgba(26, 26, 26, 1);
 
 $c_primary_action_pressed_border: rgba(60, 140, 200, 1);
 $c_primary_action_pressed_border--dark: rgba(90, 180, 240, 1);
@@ -319,4 +319,4 @@ $width_xl: 80em;
 $width_xxl: 120em;
 $width_xxxl: 160em;
 $width_x4k: 240em;
-$max-width: $width_xxl;
+$max_width: $width_xxl;

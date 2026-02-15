@@ -1,25 +1,24 @@
 function dd_scrolltop() {
-  /**
-  * trigger for window scroll and any functions that need to run based on scroll
-  * depth or visibility during scroll.
-  **/
-   jQuery(window).scroll(function () {
-    if (this.scrollTO) clearTimeout(this.scrollTO);
-    this.scrollTO = setTimeout(function () {
-      jQuery(this).trigger('scrollEnd');
+  let scrollTO = null;
+  let scrollTop = 0;
+
+  window.addEventListener('scroll', () => {
+    if (scrollTO) clearTimeout(scrollTO);
+    scrollTO = setTimeout(() => {
+      scrollTop = window.scrollY;
+
+      const btn = document.querySelector('.dd-scrolltop');
+      if (!btn) return;
+
+      if (scrollTop > 5) {
+        btn.classList.add('-active');
+      } else {
+        btn.classList.remove('-active');
+      }
     }, 0);
   });
-  jQuery(window).bind('scrollEnd', () => {
-    scrollTop = jQuery(window).scrollTop();
-    // Back to the top of page quick link.
-    if (scrollTop > 5) {
-      jQuery('.dd-scrolltop').addClass('-active');
-    }
-    else if (scrollTop < 5) {
-      jQuery('.dd-scrolltop').removeClass('-active');
-    }
-  });
-}
+};
+
 // Initialize on initial page load
 document.addEventListener('DOMContentLoaded', () => {
   dd_scrolltop();

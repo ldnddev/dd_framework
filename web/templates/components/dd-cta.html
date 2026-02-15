@@ -1,22 +1,20 @@
 <div class="dd-cta -top-left">
   <div class="dd-cta__image">
-    <img
-      srcset="
-        https://dummyimage.com/720x405/000000/fff   720w,
-        https://dummyimage.com/1920x1080/000000/fff 721w
-      "
-      sizes="(max-width: 720px) 720px, (min-width: 721px) 721px"
-      src="https://dummyimage.com/1920x1080/000000/fff"
-      alt="CTA alt tag for image"
-    />
+    <picture>
+      <source srcset="
+        https://dummyimage.com/720x405/000000/fff 720w,
+        https://dummyimage.com/1920x1080/000000/fff 1440w"
+      sizes="(max-width: 1440px) 100vw, 1440px">
+      <img src="/assets/imgs/cta-bg-sm.webp" class="dd-img" alt="CTA alt tag" />
+    </picture>
   </div>
   <style>
     .dd-cta .dd-cta__image {
-      background-image: url("https://dummyimage.com/1920x1080/000000/fff");
+      background-image: url("https://dummyimage.com/720x405/000000/fff");
     }
     @media only screen and (min-width: 64em) {
       .dd-cta .dd-cta__image {
-        background-image: url("https://dummyimage.com/720x405/000000/fff");
+        background-image: url("https://dummyimage.com/1920x1080/000000/fff");
       }
     }
   </style>
