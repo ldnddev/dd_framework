@@ -79,7 +79,8 @@
       flex-direction: column;
       justify-content: space-between;
       @include mixins.mq(lg) {
-        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
       }
       & > li {
         width: 100%;
@@ -149,8 +150,8 @@
       flex-direction: column;
       z-index: 9000;
       @include mixins.vertical_scroll();
-      & .navigation__close-icon {
-        display: block;
+      & .dd-menu__close {
+        display: none; // hide because we still show main menu close icon
         padding: 15px 40px;
       }
     }

@@ -6,6 +6,11 @@
   background-color: variables.$c_ui_neutral_100;
   border-left: solid 4px variables.$c_ui_neutral_600;
   color: variables.$c_text_primary;
+  @include mixins.pref_dark {
+  	background-color: variables.$c_ui_neutral_100--dark;
+    border-left: solid 4px variables.$c_ui_neutral_600--dark;
+    color: variables.$c_text_primary--dark;
+  }
   &__content {
     margin: 0 auto;
     width: 100%;
@@ -23,7 +28,7 @@
       content: '\f05a';
     }
   }
-  &__text {
+  &__copy {
     padding-left: 34px;
     & a {
       color: inherit;
