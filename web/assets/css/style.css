@@ -26519,7 +26519,7 @@ button.-primary,
   .navigation.-main-menu .-primary.get-involved {
     background-color: rgb(90, 180, 245);
     border-color: rgb(110, 200, 255);
-    color: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
   }
 }
 button.-primary:hover, button.-primary:focus, button.-primary:active,
@@ -26547,7 +26547,7 @@ button.-primary:hover, button.-primary:focus, button.-primary:active,
   .navigation .menu-item.button a.-primary:active,
   .navigation.-main-menu .-primary.get-involved:active {
     background-color: rgb(110, 195, 250);
-    color: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
   }
 }
 button.-secondary,
@@ -27235,7 +27235,7 @@ ul.-nostyle li::marker {
 @media (prefers-color-scheme: dark) {
   .dd-accordion.-primary .dd-accordion__item:hover .dd-accordion__header {
     background-color: rgb(90, 180, 245);
-    color: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
   }
 }
 .dd-accordion.-primary .dd-accordion__item[open], .dd-accordion.-primary .dd-accordion__item:open {
@@ -27253,7 +27253,7 @@ ul.-nostyle li::marker {
 @media (prefers-color-scheme: dark) {
   .dd-accordion.-primary .dd-accordion__item[open] .dd-accordion__header, .dd-accordion.-primary .dd-accordion__item:open .dd-accordion__header {
     background-color: rgb(90, 180, 245);
-    color: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
   }
 }
 .dd-accordion.-secondary .dd-accordion__item:hover {
@@ -27339,6 +27339,13 @@ ul.-nostyle li::marker {
   border-left: solid 4px rgb(90, 95, 102);
   color: rgb(28, 30, 33);
 }
+@media (prefers-color-scheme: dark) {
+  .dd-alert {
+    background-color: rgb(15, 17, 20);
+    border-left: solid 4px rgb(158, 163, 170);
+    color: rgb(245, 246, 247);
+  }
+}
 .dd-alert__content {
   margin: 0 auto;
   width: 100%;
@@ -27362,10 +27369,10 @@ ul.-nostyle li::marker {
   font-size: 1.5625rem;
   content: "\f05a";
 }
-.dd-alert__text {
+.dd-alert__copy {
   padding-left: 34px;
 }
-.dd-alert__text a {
+.dd-alert__copy a {
   color: inherit;
 }
 .dd-alert.-info, .dd-alert.-minor {
@@ -28154,7 +28161,8 @@ body.-active-menu {
 }
 @media only screen and (min-width: 64em) {
   .navigation.-main-menu .menu {
-    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
   }
 }
 .navigation.-main-menu .menu > li {
@@ -28181,7 +28189,7 @@ body.-active-menu {
 }
 @media (prefers-color-scheme: dark) {
   .navigation.-main-menu .menu-item-has-children:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(26, 26, 26);
   }
 }
 .navigation.-main-menu .menu-item-has-children.-active > a::after {
@@ -28227,8 +28235,8 @@ body.-active-menu {
 .-active.navigation.-main-menu::-webkit-scrollbar {
   display: none;
 }
-.-active.navigation.-main-menu .navigation__close-icon {
-  display: block;
+.-active.navigation.-main-menu .dd-menu__close {
+  display: none;
   padding: 15px 40px;
 }
 
@@ -28354,22 +28362,14 @@ body.-active-menu {
   padding: 40px 0;
   max-width: 80em;
 }
-.dd-section.-full {
-  max-width: 100%;
-}
 .dd-section__content {
   position: relative;
   top: 0px;
   left: 0px;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-}
-.dd-section__content {
   margin: 0 auto;
   max-width: 80em;
-}
-.dd-section__content.-full {
-  max-width: 100%;
 }
 .dd-section__title {
   font-family: "Lato", sans-serif !important;
@@ -28379,6 +28379,54 @@ body.-active-menu {
 }
 .dd-section.-no-padding {
   padding: 0;
+}
+.dd-section.-full-full {
+  max-width: 100%;
+}
+.dd-section.-full-full .dd-section__content {
+  max-width: 100%;
+}
+.dd-section.-full-contained {
+  max-width: 100%;
+}
+.dd-section.-full-contained .dd-section__content {
+  max-width: 120em;
+}
+.dd-section.-full-md {
+  max-width: 100%;
+}
+.dd-section.-full-md .dd-section__content {
+  max-width: 48em;
+}
+.dd-section.-full-lg {
+  max-width: 100%;
+}
+.dd-section.-full-lg .dd-section__content {
+  max-width: 64em;
+}
+.dd-section.-full-xl {
+  max-width: 100%;
+}
+.dd-section.-full-xl .dd-section__content {
+  max-width: 80em;
+}
+.dd-section.-full-xxl {
+  max-width: 100%;
+}
+.dd-section.-full-xxl .dd-section__content {
+  max-width: 120em;
+}
+.dd-section.-md {
+  max-width: 48em;
+}
+.dd-section.-lg {
+  max-width: 64em;
+}
+.dd-section.-xl {
+  max-width: 80em;
+}
+.dd-section.-xxl {
+  max-width: 120em;
 }
 
 .dd-slider {
