@@ -1,5 +1,5 @@
 {
-  "name": "@dxdevs.ldnddev/dd-framework",
+  "name": "@ldnddev/dd-framework",
   "version": "1.1.0",
   "description": "ldnddev framework for projects.",
   "main": "Gruntfile.js",
@@ -46,14 +46,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/ldnddev/dd-framework.git"
+    "url": "git+ssh://git@github.com/ldnddev/dd_framework.git"
   },
   "author": "Jared Lyvers",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/ldnddev/dd-framework/issues"
+    "url": "https://github.com/ldnddev/dd_framework/issues"
   },
-  "homepage": "https://bitbucket.org/ldnddev/dd-framework#readme",
+  "homepage": "https://github.com/ldnddev/dd_framework#readme",
   "optionalDependencies": {
     "fsevents": "^2.3.2"
   }

@@ -49,11 +49,7 @@ module.exports = (grunt) => {
           'web/assets/css/style.css': 'source/scss/style.scss'
         }
       },
-      error: {
-        files: {
-          'web/assets/css/errors.css': 'source/scss/errors.scss'
-        }
-      }
+
     },
     realFavicon: {
       favicons: {
@@ -246,9 +242,7 @@ module.exports = (grunt) => {
     'browserSync',
     'watch'
   ]);
-  grunt.registerTask('throw', [
-    'dart-sass:error'
-  ]);
+
   grunt.registerTask('sync', [
     'browserSync',
     'watch'
