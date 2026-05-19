@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dd-banner demo - dd-framework</title>
+<link rel="stylesheet" href="/assets/css/style.min.css">
+<style>
+  body{margin:0;padding:0}
+  /* Demo isolation: each iframe is its own document, so headings here are scoped locally. */
+</style>
+</head>
+<body class="dd-g">
+<main aria-label="dd-banner live example">
+<div class="dd-banner" data-aos="fade-in" style="background-image: url(https://dummyimage.com/1440x600/000/fff);">
+  <div class="dd-banner__image">
+  <img
+    sizes="(max-width: 1024px) 100vw 1024px"
+    srcset="
+      https://dummyimage.com/720x400/000/fff 720w
+      https://dummyimage.com/1440x600/000/fff 1024w"
+    src="https://dummyimage.com/1440x600/000/fff" class="dd-img" alt="Banner image description" />
+  </div>
+</div>
+</main>
+</body>
+</html>
